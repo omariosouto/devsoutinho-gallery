@@ -168,9 +168,8 @@ export default function Example(props) {
 
         <main className="mt-16 max-w-7xl px-4 sm:mt-24 container self-center grid sm:grid-cols-1 lg:grid-cols-2 gap-20 items-center content-center flex-1">
           <div className="text-left">
-            <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+            <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 max-w-sm sm:text-5xl md:text-6xl">
               <span className="block xl:inline">DevSoutinho </span>
-              <br />
               <span className="block text-yellow-500 xl:inline">Gallery</span>
             </h1>
             <p className="mt-3 text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl max-w-sm md:max-w-md">
