@@ -1,9 +1,11 @@
 import { QrcodeIcon, CurrencyDollarIcon, SparklesIcon, ChipIcon } from '@heroicons/react/outline'
+import { MusicNoteIcon } from '@heroicons/react/solid'
 
 const IconsBySlug = {
   default: SparklesIcon,
   qrcode: QrcodeIcon,
   chip: ChipIcon,
+  'music-note': MusicNoteIcon,
   'currency-dollar': CurrencyDollarIcon,
 };
 
@@ -16,6 +18,7 @@ export default function ProjectsGrid({ projects }) {
     <div className="rounded-lg bg-gray-200 overflow-hidden shadow divide-y divide-gray-200 sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-px">
       {projects.map((project, actionIdx) => {
         const Icon = IconsBySlug[project.icon] || IconsBySlug.default;
+        const link = project.link || 'https://youtube.com/DevSoutinho'
         return (
           <div
             key={project.slug}
@@ -40,7 +43,7 @@ export default function ProjectsGrid({ projects }) {
             </div>
             <div className="mt-8">
               <h3 className="text-lg font-medium">
-                <a href={project.href} className="focus:outline-none">
+                <a href={link} className="focus:outline-none">
                   {/* Extend touch target to entire panel */}
                   <span className="absolute inset-0" aria-hidden="true" />
                   {project.name}
