@@ -31,26 +31,8 @@ export default function ProjectsGrid({ projects }) {
             )}
           >
             <div>
-              {/* <span
-                className={classNames(
-                  // `text-gray-700 group-hover:text-${project.color}-700`,
-                  // `bg-gray-50 group-hover:bg-${project.color}-50`,
-                  // `text-${project.color}-700`,
-                  // `bg-${project.color}-50`,
-                  `text-yellow-500`,
-                  `bg-yellow-50`,
-                  'rounded-lg inline-flex p-3 ring-4 ring-white'
-                )}
-              > */}
-              {/* <span className={`safe rounded-lg inline-flex p-3 ring-4 ring-white text-yellow-700 ${project.color === 'red' ? 'bg-red-50' : 'bg-yelow-50'}`}> */}
               <span
-                className={classNames(
-                  `safe rounded-lg inline-flex p-3 ring-4 ring-white text-gray-700 bg-gray-50`,
-                  project.color === 'red' && 'group-hover:bg-red-50 group-hover:text-red-700',
-                  project.color === 'yellow' && 'group-hover:bg-yellow-50 group-hover:text-yellow-700',
-                  project.color === 'green' && 'group-hover:bg-green-50 group-hover:text-green-700',
-                  project.color === 'blue' && 'group-hover:bg-blue-50 group-hover:text-blue-700',
-                )}
+                className="safe rounded-lg inline-flex p-3 ring-4 ring-white text-gray-700 bg-gray-50 group-hover:bg-yellow-50 group-hover:text-yellow-700"
               >
                 <Icon className="h-6 w-6" aria-hidden="true" />
               </span>
