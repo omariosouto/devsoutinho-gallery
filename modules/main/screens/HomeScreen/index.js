@@ -1,7 +1,6 @@
 import HeroExample from './HeroExample';
 
 import ProjectsGrid from './patterns/ProjectsGrid';
-import Container from '../../../../components/layout/Container';
 import Footer from '../../../../patterns/Footer';
 
 export default function HomeScreen({ projects }) {
