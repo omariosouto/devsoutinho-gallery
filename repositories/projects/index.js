@@ -4,8 +4,9 @@ export const getAllProjects = async () => {
   const projects = [
     {
       name: 'Store',
-      description: 'Uma implementação simples de loja usando a API do Stripe e DatoCMS',
+      description: 'Uma implementação simples de loja usando a API do Stripe e Notion!',
       icon: 'currency-dollar',
+      link: '/store',
     },
     {
       name: 'Pokedex',

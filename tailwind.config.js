@@ -3,7 +3,7 @@ const colors = require('tailwindcss/colors')
 
 
 module.exports = {
-  // mode: 'jit',
+  mode: 'jit',
   purge: {
     enabled: true,
     content: [
@@ -31,5 +31,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
   ],
 }

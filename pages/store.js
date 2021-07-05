@@ -4,7 +4,7 @@ import { getProducts } from '../repositories/products';
 
 export default storeHOC(StoreHomeScreen, {
   storeModuleProvider: {
-    isPaymentEnabled: true,
+    isPaymentEnabled: false,
   }
 })
 

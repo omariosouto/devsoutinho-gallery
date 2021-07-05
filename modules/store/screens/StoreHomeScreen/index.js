@@ -1,41 +1,18 @@
-import { useStoreModuleContext } from '../../wrappers/StoreModuleProvider';
+import Footer from '../../../../patterns/Footer'
+import Container from '../../../../components/layout/Container'
 import Header from './patterns/Header'
+import ProductList from './patterns/ProductList'
 
 export default function StoreHomeScreen({ products }) {
-  const { isPaymentEnabled } = useStoreModuleContext();
-
-
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Header />
 
-      
+      <Container wrapperClassName="flex-1" className="py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+        <ProductList products={products} />
+      </Container>
 
-      <ul>
-        {products.map(product => (
-          <li key={product.id}>
-            <article>
-              <h2>{product.title}</h2>
-              <p>
-                {product.description}
-              </p>
-
-              {isPaymentEnabled
-                ? (
-                  <button>
-                    Comprar (Stripe)
-                  </button>
-                )
-                : (
-                  <a href={product.link}>
-                    Comprar (Direct Link)
-                  </a>
-                )
-              }
-            </article>
-          </li>
-        ))}
-      </ul>
+      <Footer />
     </div>
   );
 }
