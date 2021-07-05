@@ -1,5 +1,5 @@
 import { useStoreModuleContext } from '../../wrappers/StoreModuleProvider';
-import PaymentToggle from './components/PaymentToggle'
+import Header from './patterns/Header'
 
 export default function StoreHomeScreen({ products }) {
   const { isPaymentEnabled } = useStoreModuleContext();
@@ -7,9 +7,9 @@ export default function StoreHomeScreen({ products }) {
 
   return (
     <div>
-      <h1>Lojinha</h1>
+      <Header />
 
-      <PaymentToggle />
+      
 
       <ul>
         {products.map(product => (
