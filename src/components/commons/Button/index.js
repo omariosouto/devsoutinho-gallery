@@ -7,11 +7,11 @@ function ButtonText({ className, href, size, ...props }) {
   const TagBase = hasHref ? Link : 'button';
 
   const mapTextVariantBySize = {
-    xs: 'xs',
-    sm: 'sm',
-    md: 'sm',
-    lg: 'base',
-    xl: 'base',
+    xs: 'body-4',
+    sm: 'body-3',
+    md: 'body-3',
+    lg: 'body-2',
+    xl: 'body-2',
   }
 
   return <Text as={TagBase} variant={mapTextVariantBySize[size]} href={href} className={className} {...props} />;

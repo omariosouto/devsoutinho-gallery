@@ -7,7 +7,7 @@ import { navigationLinks } from './data';
 export default function Footer() {
   return (
     <Box as="footer" className="bg-neutral-900" aria-labelledby="footer-heading">
-      <Text id="footer-heading" tagName="h2" srOnly>
+      <Text id="footer-heading" as="h2" srOnly>
         Footer
       </Text>
       <Box className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
@@ -21,7 +21,7 @@ export default function Footer() {
             ))}
           </Box>
           <Box className="mt-8 md:mt-0 md:order-1">
-            <Text tagName="p" className="text-neutral-400">
+            <Text as="p" className="text-neutral-400">
               &copy; 2020  
               {' '}
               <Link
