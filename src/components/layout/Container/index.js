@@ -8,3 +8,13 @@ export default function Container({ children, wrapperClassName, className }) {
     </div>
   )
 }
+
+export function MainContainer({ 
+  children,
+}) {
+  return (
+    <main className="flex flex-col min-h-screen">
+      {children}
+    </main>
+  )
+}
