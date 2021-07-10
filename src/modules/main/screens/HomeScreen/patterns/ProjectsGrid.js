@@ -1,23 +1,10 @@
-import { QrcodeIcon, CurrencyDollarIcon, SparklesIcon, ChipIcon } from '@heroicons/react/outline'
-import { MusicNoteIcon } from '@heroicons/react/solid'
-
-const IconsBySlug = {
-  default: SparklesIcon,
-  qrcode: QrcodeIcon,
-  chip: ChipIcon,
-  'music-note': MusicNoteIcon,
-  'currency-dollar': CurrencyDollarIcon,
-};
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+import Icon from '../../../../../components/commons/Icon';
+import { classNames } from '../../../../../infra/react/classNames';
 
 export default function ProjectsGrid({ projects }) {
   return (
     <div className="rounded-lg bg-gray-200 overflow-hidden shadow divide-y divide-gray-200 sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-px">
       {projects.map((project, actionIdx) => {
-        const Icon = IconsBySlug[project.icon] || IconsBySlug.default;
         const link = project.link || 'https://youtube.com/DevSoutinho'
         return (
           <div
@@ -34,7 +21,7 @@ export default function ProjectsGrid({ projects }) {
               <span
                 className="safe rounded-lg inline-flex p-3 ring-4 ring-white text-gray-700 bg-gray-50 group-hover:bg-yellow-50 group-hover:text-yellow-700"
               >
-                <Icon className="h-6 w-6" aria-hidden="true" />
+                <Icon name={project.icon} size="sm" aria-hidden="true" />
               </span>
             </div>
             <div className="mt-8">
@@ -43,6 +30,7 @@ export default function ProjectsGrid({ projects }) {
                   {/* Extend touch target to entire panel */}
                   <span className="absolute inset-0" aria-hidden="true" />
                   {project.name}
+                  {project.new && <span className="text-accent-900"> (new)</span>}
                 </a>
               </h3>
               <p className="mt-2 text-sm text-gray-500">

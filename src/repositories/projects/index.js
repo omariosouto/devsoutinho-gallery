@@ -5,13 +5,14 @@ export const getAllProjects = async () => {
     {
       name: 'Store',
       description: 'Uma implementação simples de loja usando a API do Stripe e Notion!',
-      icon: 'currency-dollar',
+      icon: 'currencyDollar',
       link: '/store',
+      new: true,
     },
     {
       name: 'Pokedex',
       description: 'Uma pokedex simples feita com NextJS e GraphQL!',
-      icon: 'bookmark-alt',
+      icon: 'bookmarkAlt',
       link: 'https://github.com/omariosouto/pokedex' 
     },
     {
@@ -23,7 +24,7 @@ export const getAllProjects = async () => {
     {
       name: 'Spotcast',
       description: 'Um app que usa a API do Spotify pra montar um player de podcasts em React Native baseado no PocketCasts',
-      icon: 'music-note',
+      icon: 'musicNote',
       link: 'https://github.com/omariosouto/spotcast' 
     },
   ].map(({ name, ...rest }, index) => ({ name, slug: slugify(name), id: index, ...rest }));
