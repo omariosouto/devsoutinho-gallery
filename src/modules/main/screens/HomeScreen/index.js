@@ -15,7 +15,7 @@ export default function HomeScreen({ projects }) {
         <Box className="mt-5">
           <Button
             href="/"
-            variant="primary"
+            variant="accent"
             size="xs"
           >
             Ver mais!
