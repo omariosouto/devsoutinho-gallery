@@ -1,7 +1,6 @@
 import NextLink from 'next/link';
 import { classNames } from '../../../infra/react/classNames';
 import Icon from '../Icon';
-import Text from '../Text';
 
 const INTERNAL_LINK = 'internalLink';
 const EXTERNAL_LINK = 'externalLink';
@@ -11,17 +10,17 @@ const LinkIcon = ({ name }) => <Icon name={name} className="ml-1 inline-block al
 const linkVariants = {
   [INTERNAL_LINK]: ({ href, children, className, hasIcon, ...props }) => (
     <NextLink passHref href={href}>
-      <Text tagName="a" className={className} {...props}>
+      <a className={className} {...props}>
         {children}
         {hasIcon && <LinkIcon name="arrowLeft" />}
-      </Text>
+      </a>
     </NextLink>
   ),
   [EXTERNAL_LINK]: ({ href, children, className, hasIcon, ...props }) => (
-    <Text href={href} className={className} tagName="a" {...props}>
+    <a href={href} className={className} {...props}>
       {children}
       {hasIcon && <LinkIcon name="arrowUpLeft" />}
-    </Text>
+    </a>
   )
 };
 
@@ -48,5 +47,6 @@ export default function Link({ href, children, hasIcon, className, variant, ...p
 
 Link.defaultProps = {
   hasIcon: true,
-  variant: ''
+  variant: '',
+  href: '',
 };

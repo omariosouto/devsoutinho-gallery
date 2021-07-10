@@ -16,8 +16,9 @@ export default function HomeScreen({ projects }) {
           <Button
             href="/"
             variant="primary"
+            size="xs"
           >
-            Ver mais
+            Ver mais!
           </Button>
         </Box>
       </HeroExample>

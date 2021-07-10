@@ -1,12 +1,25 @@
 import { classNames } from '../../../infra/react/classNames';
 import Link from '../Link';
+import Text from '../Text';
+
+function ButtonText({ className, href, size, ...props }) {
+  const hasHref = Boolean(href);
+  const TagBase = hasHref ? Link : 'button';
+
+  const mapTextVariantBySize = {
+    xs: 'xs',
+    sm: 'sm',
+    md: 'sm',
+    lg: 'base',
+    xl: 'base',
+  }
+
+  return <Text as={TagBase} variant={mapTextVariantBySize[size]} href={href} className={className} {...props} />;
+}
 
 export default function Button({ children, variant, size, href, ...props }) {
-  const hasHref = Boolean(href);
-  const ButtonBase = hasHref ? Link : 'button';
-
   return (
-    <ButtonBase
+    <ButtonText
       href={href}
       className={classNames(
         // Focus Ring
@@ -23,17 +36,12 @@ export default function Button({ children, variant, size, href, ...props }) {
         size === 'lg' && 'px-4 py-2',
         size === 'xl' && 'px-6 py-3',
         'inline-flex items-center',
-        // TODO: Solve this through Text component
-        size === 'xs' && 'text-xs',
-        size === 'sm' && 'text-sm',
-        size === 'md' && 'text-sm',
-        size === 'lg' && 'text-base',
-        size === 'xl' && 'text-base',
       )}
+      size={size}
       {...props}
     >
       {children}
-    </ButtonBase>      
+    </ButtonText>      
   );
 }
 
