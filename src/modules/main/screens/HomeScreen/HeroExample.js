@@ -1,5 +1,5 @@
-import { HomeBackground } from './patterns/HomeBackground';
-import { MainMenu } from './patterns/MainMenu';
+import { HomeBackground } from "./patterns/HomeBackground";
+import { MainMenu } from "./patterns/MainMenu";
 
 export default function Example(props) {
   return (
@@ -15,14 +15,14 @@ export default function Example(props) {
               <span className="block text-primary-500 xl:inline">Gallery</span>
             </h1>
             <p className="mt-3 text-base text-neutral-700 sm:text-lg md:mt-5 md:text-xl max-w-sm md:max-w-md">
-              Aqui você vai encontrar diversos exemplos de projetos feitos por mim com fluxos e features comuns que você pode usar para montar seu portfólio!
+              Aqui você vai encontrar diversos exemplos de projetos feitos por
+              mim com fluxos e features comuns que você pode usar para montar
+              seu portfólio!
             </p>
           </div>
-          <div>
-            {props.children}
-          </div>
+          <div>{props.children}</div>
         </main>
       </div>
     </div>
-  )
+  );
 }

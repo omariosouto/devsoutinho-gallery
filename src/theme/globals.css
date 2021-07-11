@@ -4,5 +4,26 @@
 @tailwind utilities;
 
 
+@layer base {
+  /*
+  // 1 - O tema define o deck de cores
+  // 2 - A UI define a nomenclatura
+  // 3 - Um wrapper seta como que determinado pedaço da UI vai se comportar, podendo mergear temas
+  */
+  :root {
+    --color-text-base: theme('colors.neutral.100');
+    --color-fill: theme('colors.neutral.900');
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-text-base: theme('colors.neutral.900');
+      --color-fill: theme('colors.neutral.100');
+    }
+  }
+  
 
-
+  .theme-store {
+    --color-text-base: theme('colors.primary.100');
+    --color-fill: theme('colors.accent.900');
+  }
+}

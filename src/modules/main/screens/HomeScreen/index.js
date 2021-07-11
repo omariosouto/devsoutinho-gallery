@@ -1,10 +1,10 @@
-import HeroExample from './HeroExample';
+import HeroExample from "./HeroExample";
 
-import ProjectsGrid from './patterns/ProjectsGrid';
-import Footer from '../../../../patterns/Footer';
-import { MainContainer } from '../../../../components/layout/Container';
-import Box from '../../../../components/layout/Box';
-import Button from '../../../../components/commons/Button';
+import ProjectsGrid from "./patterns/ProjectsGrid";
+import Footer from "../../../../patterns/Footer";
+import { MainContainer } from "../../../../components/layout/Container";
+import Box from "../../../../components/layout/Box";
+import Button from "../../../../components/commons/Button";
 
 export default function HomeScreen({ projects }) {
   return (
@@ -13,18 +13,16 @@ export default function HomeScreen({ projects }) {
         <ProjectsGrid projects={projects.slice(0, 4)} />
 
         <Box className="mt-5">
-          <Button
-            href="/"
-            variant="accent"
-            size="xs"
-          >
+          <Button href="/" variant="accent" size="xs">
             Ver mais!
           </Button>
         </Box>
       </HeroExample>
 
-
       <Footer />
+      <div className="theme-store">
+        <Footer />
+      </div>
     </MainContainer>
-  )
+  );
 }

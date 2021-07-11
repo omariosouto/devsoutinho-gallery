@@ -1,4 +1,4 @@
-import PaymentToggle from './components/PaymentToggle'
+import PaymentToggle from "./components/PaymentToggle";
 
 export default function Header() {
   return (
@@ -6,10 +6,12 @@ export default function Header() {
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:flex lg:justify-between">
         <div className="max-w-xl">
           <h2 className="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">
-            DevSoutinho's Store
+            {`DevSoutinho's Store`}
           </h2>
           <p className="mt-5 text-xl text-gray-400">
-            Aqui uma pequena lojinha que eu mantenho, com exemplo de integração com o Stripe e por padrão se você gostar pode me ajudar comprando algo via link direto :)
+            Aqui uma pequena lojinha que eu mantenho, com exemplo de integração
+            com o Stripe e por padrão se você gostar pode me ajudar comprando
+            algo via link direto :)
           </p>
         </div>
         <div className="mt-10 w-full max-w-xs">
@@ -22,5 +24,5 @@ export default function Header() {
         </div>
       </div>
     </div>
-  )
+  );
 }

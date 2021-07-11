@@ -1,5 +1,5 @@
-import { createContext, useContext } from 'react';
-import { usePaymentStatus, paymentMethods } from './usePaymentStatus';
+import { createContext, useContext } from "react";
+import { usePaymentStatus, paymentMethods } from "./usePaymentStatus";
 
 const StoreModuleContext = createContext({
   isPaymentEnabled: false,
@@ -13,9 +13,11 @@ export default function StoreModuleProvider({ children, isPaymentEnabled }) {
   const paymentStatus = usePaymentStatus(isPaymentEnabled);
 
   return (
-    <StoreModuleContext.Provider value={{
-      ...paymentStatus
-    }}>
+    <StoreModuleContext.Provider
+      value={{
+        ...paymentStatus,
+      }}
+    >
       {children}
     </StoreModuleContext.Provider>
   );

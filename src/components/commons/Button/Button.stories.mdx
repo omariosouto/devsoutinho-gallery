@@ -1,0 +1,47 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import Button from './index';
+
+<Meta title="Components/Commons/Button" />
+
+# Button
+
+A sample button component to be reuse cross modules and with multiple themes
+
+<ArgsTable of={Button} />
+
+<Canvas>
+  <Story
+    name="Sample Button"
+    args={{
+      variant:'primary',
+      children: 'Sample Button'
+    }}
+  >
+    {(args) => <Button {...args} />}
+  </Story>
+</Canvas> 
+
+<Canvas>
+  <Story
+    name="Sample Button 2"
+    args={{
+      variant:'accent',
+      children: 'Sample Button 2'
+    }}
+  >
+    {(args) => <Button {...args} />}
+  </Story>
+</Canvas> 
+
+
+<Canvas>
+  <Story
+    name="Sample Button 3"
+    args={{
+      variant:'accent',
+      children: 'Sample Button 3'
+    }}
+  >
+    {(args) => <Button {...args} />}
+  </Story>
+</Canvas> 

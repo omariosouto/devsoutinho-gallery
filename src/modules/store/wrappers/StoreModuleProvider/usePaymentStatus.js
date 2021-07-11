@@ -1,19 +1,21 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-const STRIPE = 'stripe';
-const DIRECT_LINK = 'directLink';
+const STRIPE = "stripe";
+const DIRECT_LINK = "directLink";
 
 export const paymentMethods = {
   STRIPE,
-  DIRECT_LINK
+  DIRECT_LINK,
 };
 
 export function usePaymentStatus(paymentStatusInitialState = false) {
-  const [isPaymentEnabled, setPaymentStatus] = useState(paymentStatusInitialState);
+  const [isPaymentEnabled, setPaymentStatus] = useState(
+    paymentStatusInitialState
+  );
 
   return {
     isPaymentEnabled,
     setPaymentStatus,
     paymentMethod: isPaymentEnabled ? STRIPE : DIRECT_LINK,
-  }
+  };
 }

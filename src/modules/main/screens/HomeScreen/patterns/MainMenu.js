@@ -1,19 +1,17 @@
-import { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
-import { MenuIcon, XIcon } from '@heroicons/react/outline'
-import Logo from '../../../../../theme/Logo';
-import Link from '../../../../../components/commons/Link';
-import Button from '../../../../../components/commons/Button';
+import { Fragment } from "react";
+import { Popover, Transition } from "@headlessui/react";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import Logo from "../../../../../theme/Logo";
+import Link from "../../../../../components/commons/Link";
+import Button from "../../../../../components/commons/Button";
 
 const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'Newsletter', href: 'https://mariosouto.com/newsletter' },
-  { name: 'Vídeos e Tutoriais', href: 'https://youtube.com/DevSoutinho' },
-]
-
+  { name: "Home", href: "/" },
+  { name: "Newsletter", href: "https://mariosouto.com/newsletter" },
+  { name: "Vídeos e Tutoriais", href: "https://youtube.com/DevSoutinho" },
+];
 
 export function MainMenu() {
-
   return (
     <Popover>
       {({ open }) => (
@@ -39,7 +37,12 @@ export function MainMenu() {
               </div>
               <div className="hidden md:flex md:space-x-10">
                 {navigation.map((item) => (
-                  <Link key={item.name} hasIcon={false} href={item.href} className="font-medium text-gray-500 hover:text-gray-900">
+                  <Link
+                    key={item.name}
+                    hasIcon={false}
+                    href={item.href}
+                    className="font-medium text-gray-500 hover:text-gray-900"
+                  >
                     {item.name}
                   </Link>
                 ))}
@@ -107,5 +110,5 @@ export function MainMenu() {
         </>
       )}
     </Popover>
-  )
+  );
 }

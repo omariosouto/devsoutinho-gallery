@@ -1,11 +1,13 @@
-import NextLink from 'next/link';
-import { classNames } from '../../../infra/react/classNames';
-import Icon from '../Icon';
+import NextLink from "next/link";
+import { classNames } from "../../../infra/react/classNames";
+import Icon from "../Icon";
 
-const INTERNAL_LINK = 'internalLink';
-const EXTERNAL_LINK = 'externalLink';
+const INTERNAL_LINK = "internalLink";
+const EXTERNAL_LINK = "externalLink";
 
-const LinkIcon = ({ name }) => <Icon name={name} className="ml-1 inline-block align-text-bottom" />
+const LinkIcon = ({ name }) => (
+  <Icon name={name} className="ml-1 inline-block align-text-bottom" />
+);
 
 const linkVariants = {
   [INTERNAL_LINK]: ({ href, children, className, hasIcon, ...props }) => (
@@ -21,11 +23,18 @@ const linkVariants = {
       {children}
       {hasIcon && <LinkIcon name="arrowUpLeft" />}
     </a>
-  )
+  ),
 };
 
-export default function Link({ href, children, hasIcon, className, variant, ...props }) {
-  const isLinkInternal = href.includes('http') ? EXTERNAL_LINK : INTERNAL_LINK;
+export default function Link({
+  href,
+  children,
+  hasIcon,
+  className,
+  variant,
+  ...props
+}) {
+  const isLinkInternal = href.includes("http") ? EXTERNAL_LINK : INTERNAL_LINK;
   const LinkComponent = linkVariants[isLinkInternal];
 
   return (
@@ -34,8 +43,8 @@ export default function Link({ href, children, hasIcon, className, variant, ...p
       hasIcon={hasIcon}
       className={classNames(
         // Variants
-        variant === 'primary' && 'text-primary-500 hover:text-primary-400',
-        variant === 'accent' && 'text-accent-500 hover:text-accent-400',
+        variant === "primary" && "text-primary-500 hover:text-primary-400",
+        variant === "accent" && "text-accent-500 hover:text-accent-400",
         className
       )}
       {...props}
@@ -47,6 +56,6 @@ export default function Link({ href, children, hasIcon, className, variant, ...p
 
 Link.defaultProps = {
   hasIcon: true,
-  variant: '',
-  href: '',
+  variant: "",
+  href: "",
 };

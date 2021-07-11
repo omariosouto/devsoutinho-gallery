@@ -1,13 +1,11 @@
-import StoreModuleProvider from '../StoreModuleProvider';
+import StoreModuleProvider from "../StoreModuleProvider";
 
 export default function storeHOC(ScreenComponent, hocProps) {
   return (props) => (
     <StoreModuleProvider
       isPaymentEnabled={hocProps.storeModuleProvider.isPaymentEnabled}
     >
-      <ScreenComponent
-        {...props}
-      />
+      <ScreenComponent {...props} />
     </StoreModuleProvider>
-  )
+  );
 }
