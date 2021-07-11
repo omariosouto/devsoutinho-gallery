@@ -1,6 +1,6 @@
 import NextLink from "next/link";
 import { classNames } from "../../../infra/react/classNames";
-import Icon from "../Icon";
+import Icon from "../../foundation/Icon";
 
 const INTERNAL_LINK = "internalLink";
 const EXTERNAL_LINK = "externalLink";

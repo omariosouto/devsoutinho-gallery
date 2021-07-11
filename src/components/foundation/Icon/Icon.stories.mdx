@@ -1,0 +1,50 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import Icon, { iconSizes } from './index';
+import { IconMapByName, getAllIconNames } from './IconMapByName';
+import { IconGallery } from './__storie__/IconGallery';
+
+<Meta
+  title="Components/Foundation/Icon"
+  component={Icon}
+  argTypes={{
+    size: {
+      options: Object.keys(iconSizes),
+      control: { type: 'select' }
+    },
+    name: {
+      options: getAllIconNames(),
+      control: { type: 'select' }
+    }
+  }}
+/>
+
+export const Template = (args) => <Icon {...args} />
+
+# Icon
+
+Icon component abstract access to all icons that we have
+
+<ArgsTable of={Icon} />
+
+<Canvas>
+  <Story
+    name="Icon Component"
+    args={{
+      name: 'default',
+      size: 'xs',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<IconGallery>
+  {getAllIconNames().map((iconName) => (
+    <IconGallery.Item
+      key={`iconGallery__${iconName}`}
+      icon={<Icon name={iconName} size="sm" />}
+      description={iconName}
+    />
+  ))}
+</IconGallery>
+  

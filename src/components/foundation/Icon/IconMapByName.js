@@ -1,6 +1,4 @@
-import { classNames } from "../../../infra/react/classNames";
-
-const IconMapByName = {
+export const IconMapByName = {
   default: () => (
     <path
       stroke="currentColor"
@@ -98,28 +96,4 @@ const IconMapByName = {
   ),
 };
 
-export default function Icon({ name, size, className, ...props }) {
-  const CurrentIcon = IconMapByName[name];
-  const isIconXS = size === "xs";
-  const isIconSM = size === "sm";
-  return (
-    <svg
-      className={classNames(
-        isIconXS && "h-4 w-4",
-        isIconSM && "h-6 w-6",
-        className
-      )}
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      fill="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <CurrentIcon />
-    </svg>
-  );
-}
-
-Icon.defaultProps = {
-  size: "xs",
-  name: "default",
-};
+export const getAllIconNames = () => Object.keys(IconMapByName);

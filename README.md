@@ -5,7 +5,7 @@ WIP!
 
 ## Foundation
 - Layout
-- Icon
 - Typography
+- Icon
 - Colors
   - Themes

@@ -1,6 +1,6 @@
 import { classNames } from "../../../infra/react/classNames";
 import Link from "../Link";
-import Text from "../Text";
+import Text from "../../foundation/Text";
 
 function ButtonText({ className, href, size, ...props }) {
   const hasHref = Boolean(href);
