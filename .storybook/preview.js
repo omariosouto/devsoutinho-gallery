@@ -9,4 +9,9 @@ export const parameters = {
     },
     expanded: true,
   },
+  options: {
+    storySort: {
+      order: ['Foundation', '*'],
+    },
+  },
 }

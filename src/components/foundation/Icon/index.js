@@ -36,7 +36,7 @@ Icon.defaultProps = {
 const propTypes = {
   /** Name of the icon with lower camel case */
   name: PropTypes.oneOf(getAllIconNames()).isRequired,
-  size: PropTypes.string,
+  size: PropTypes.oneOf(Object.keys(iconSizes)),
   className: PropTypes.string,
 };
 Icon.propTypes = propTypes;

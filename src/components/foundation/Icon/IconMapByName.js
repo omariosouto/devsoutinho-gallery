@@ -70,6 +70,8 @@ export const IconMapByName = {
   ),
   qrcode: () => (
     <path
+      stroke="currentColor"
+      fill="transparent"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="2"
