@@ -9,3 +9,11 @@ WIP!
 - Icon
 - Colors
   - Themes
+
+
+## Roadmap
+- [x] Icon
+- [ ] Text
+- [ ] Link
+- [ ] Button
+- [ ] ...
