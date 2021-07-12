@@ -11,21 +11,85 @@
   // 3 - Um wrapper seta como que determinado pedaço da UI vai se comportar, podendo mergear temas
   */
   :root {
-    /* Background */
+    /* ## Background */
     --color-fill: theme('colors.neutral.100');
     --color-fill-highlight: theme('colors.primary.500');
     --color-fill-highlight-dark: theme('colors.primary.600');
     --color-fill-highlight-darker: theme('colors.primary.900');
     /* ============= */
-    /* Text */
+    
+    /* ## Text */
     --text-contrast-fill-highlight: #FFFFFF;
     --text-contrast-fill: theme('colors.neutral.900');
     --color-text-light: theme('colors.neutral.700');
+    /*
+    --color-text-light-fill-highlight
+    */
     --color-text-fill-highlight: var(--color-fill);
     --color-text-medium: theme('colors.neutral.800');
+    /*
+    --color-text-medium-fill-highlight
+    */
     --color-text-fill-highlight-dark: var(--color-fill-highlight-dark);
     --color-text-strong: theme('colors.neutral.900');
+    /*
+    --color-text-strong-fill-highlight
+    */
     --color-text-fill-highlight-darker: var(--color-fill-highlight-darker);
-    /* Text based in Background */
+    /* ============= */
+
+    /* ## Button */
+    /* --primary.default */
+    --color-button-primary-default-color: #FFFFFF;
+    --color-button-primary-default-color-hover: #FFFFFF;
+    --color-button-primary-default-background: theme('colors.neutral.600');
+    --color-button-primary-default-background-hover: theme('colors.neutral.500');
+    /* --primary.highlight */
+    --color-button-primary-highlight-color: #FFFFFF;
+    --color-button-primary-highlight-color-hover: #FFFFFF;
+    --color-button-primary-highlight-background: theme('colors.primary.600');
+    --color-button-primary-highlight-background-hover: theme('colors.primary.500');
+    /* --primary.accent */
+    --color-button-primary-accent-color: #FFFFFF;
+    --color-button-primary-accent-color-hover: #FFFFFF;
+    --color-button-primary-accent-background: theme('colors.accent.600');
+    --color-button-primary-accent-background-hover: theme('colors.accent.500');
+
+    /* // variant === variants.secondary && */
+    /* "text-neutral-800 hover:bg-neutral-300 bg-neutral-200 focus:ring-neutral-500 " */
+    /* --secondary.default */
+    --color-button-secondary-default-color: theme('colors.neutral.800');
+    --color-button-secondary-default-color-hover: theme('colors.neutral.800');
+    --color-button-secondary-default-background: theme('colors.neutral.200');
+    --color-button-secondary-default-background-hover: theme('colors.neutral.300');
+    /* --secondary.highlight */
+    --color-button-secondary-highlight-color: theme('colors.primary.800');
+    --color-button-secondary-highlight-color-hover: theme('colors.primary.800');
+    --color-button-secondary-highlight-background: theme('colors.primary.200');
+    --color-button-secondary-highlight-background-hover: theme('colors.primary.300');
+    /* --secondary.accent */
+    --color-button-secondary-accent-color: theme('colors.accent.800');
+    --color-button-secondary-accent-color-hover: theme('colors.accent.800');
+    --color-button-secondary-accent-background: theme('colors.accent.200');
+    --color-button-secondary-accent-background-hover: theme('colors.accent.300');
+
+
+    /* // variant === variants.tertiary &&
+        //   "text-neutral-700 bg-transparent hover:text-neutral-800 focus:ring-neutral-500 border shadow-none", */
+    /* --tertiary.default */
+    --color-button-tertiary-default-color: theme('colors.neutral.700');
+    --color-button-tertiary-default-color-hover: theme('colors.neutral.800');
+    --color-button-tertiary-default-background: transparent;
+    --color-button-tertiary-default-background-hover: transparent;
+    /* --tertiary.highlight */
+    --color-button-tertiary-highlight-color: theme('colors.primary.700');
+    --color-button-tertiary-highlight-color-hover: theme('colors.primary.800');
+    --color-button-tertiary-highlight-background: transparent;
+    --color-button-tertiary-highlight-background-hover: transparent;
+    /* --tertiary.accent */
+    --color-button-tertiary-accent-color: theme('colors.accent.700');
+    --color-button-tertiary-accent-color-hover: theme('colors.accent.800');
+    --color-button-tertiary-accent-background: transparent;
+    --color-button-tertiary-accent-background-hover: transparent;
   }
 }

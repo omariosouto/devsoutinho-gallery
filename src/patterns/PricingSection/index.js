@@ -159,17 +159,12 @@ export default function PricingSection() {
               ))}
             </ul>
             <Box className="md:px-10">
-              <Button
-                fullWidth
-                size="lg"
-                variant="primary"
-                className="bg-skin-fill"
-              >
+              <Button fullWidth size="lg" variant="primary" theme="highlight">
                 Get started today
               </Button>
             </Box>
             <Box className="md:px-10">
-              <Button fullWidth variant="tertiary">
+              <Button fullWidth variant="tertiary" theme="default">
                 Try Workflow Lite for free
               </Button>
             </Box>
