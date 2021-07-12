@@ -13,12 +13,12 @@ WIP!
 
 ## Roadmap
 - [x] Icon
-- [ ] Text
-  - Adicionar line-height (after mvp)
-- [ ] Link
+- [x] Text
+  - [ ] Adicionar line-height (after mvp)
 - [ ] Button
 - [ ] Color theme support
   - [ ] Criar um gerenciador estilo o do Dan Abramov
+- [ ] Link
 - [ ] ...
 - [ ] Image
   - Extender o componente de imagem do NextJS
