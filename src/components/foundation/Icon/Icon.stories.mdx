@@ -1,7 +1,8 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
-import Icon, { iconSizes } from './index';
-import { IconMapByName, getAllIconNames } from './IconMapByName';
+import Icon, { iconSizes, iconMapByName } from './index';
 import { IconGallery } from './__storie__/IconGallery';
+
+export const Template = (args) => <Icon {...args} />
 
 <Meta
   title="Foundation/Icon"
@@ -12,13 +13,11 @@ import { IconGallery } from './__storie__/IconGallery';
       control: { type: 'select' }
     },
     name: {
-      options: getAllIconNames(),
+      options: Object.keys(iconMapByName),
       control: { type: 'select' }
     }
   }}
 />
-
-export const Template = (args) => <Icon {...args} />
 
 # Icon
 
@@ -38,8 +37,9 @@ Icon component abstract access to all icons that we have
   </Story>
 </Canvas>
 
+## Icons Gallery
 <IconGallery>
-  {getAllIconNames().map((iconName) => (
+  {Object.keys(iconMapByName).map((iconName) => (
     <IconGallery.Item
       key={`iconGallery__${iconName}`}
       icon={<Icon name={iconName} size="sm" />}

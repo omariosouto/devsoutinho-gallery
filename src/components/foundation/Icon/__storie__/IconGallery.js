@@ -1,12 +1,6 @@
-import Box from "../../layout/Box";
-import Text from "../../Text";
-
 export function IconGallery({ children }) {
   return (
     <div>
-      <Box className="mb-5">
-        <Text variant="heading-3">Icon Gallery</Text>
-      </Box>
       <div className="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {children}
       </div>
