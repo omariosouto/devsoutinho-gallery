@@ -33,7 +33,7 @@ function useThemeFontSize() {
 
       return {
         xs: themeFontSize[xs].replace("rem", ""),
-        md: themeFontSize[xs || md].replace("rem", ""),
+        md: themeFontSize[md || xs].replace("rem", ""),
       };
     });
     setVariantsInfo(result);
@@ -55,10 +55,10 @@ export function SizeExamples() {
               Variant Name
             </th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Font-size: {'"xs"'} screen size
+              {'"md"'} screen size
             </th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Font-size: {'"md"'} screen size
+              {'"xs"'} screen size (default)
             </th>
           </tr>
         </thead>
@@ -74,10 +74,12 @@ export function SizeExamples() {
                 </Text>
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                {variantsInfo[index]?.xs * 16}px | {variantsInfo[index]?.xs}rem
+                Font-size: {variantsInfo[index]?.md * 16}px |{" "}
+                {variantsInfo[index]?.md}rem
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                {variantsInfo[index]?.md * 16}px | {variantsInfo[index]?.md}rem
+                Font-size: {variantsInfo[index]?.xs * 16}px |{" "}
+                {variantsInfo[index]?.xs}rem
               </td>
             </tr>
           ))}

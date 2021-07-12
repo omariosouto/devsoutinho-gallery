@@ -33,7 +33,7 @@ export default function Text({
       className={classNames(
         variant,
         variant === variants["display-1"] &&
-          "text-5xl md:text-6xl font-extrabold",
+          "text-4xl md:text-6xl font-extrabold",
         variant === variants["heading-1"] &&
           "text-4xl md:text-5xl font-extrabold",
         variant === variants["heading-2"] && "text-2xl md:text-4xl font-bold",

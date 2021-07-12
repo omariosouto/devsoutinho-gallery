@@ -132,6 +132,7 @@ export default function Icon({ name, size, className, ...props }) {
 
 Icon.defaultProps = {
   size: "xs",
+  className: '',
 };
 
 const propTypes = {

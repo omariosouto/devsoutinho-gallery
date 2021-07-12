@@ -19,7 +19,8 @@ Documentation related to "Typography" and use through the text component
   <Story
     name="Text Component"
     args={{
-      children: 'Sample Text'
+      ...Text.defaultProps,
+      children: 'sample text'
     }}
   >
     {(args) => <Text {...args} />}
