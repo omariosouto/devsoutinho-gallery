@@ -15,8 +15,9 @@ WIP!
 - [x] Icon
 - [x] Text
   - [ ] Adicionar line-height (after mvp)
-- [ ] Button
-  - primary, secondary, tertiary, success, warning, danger
+- [x] Button
+  - [x] primary, secondary, tertiary
+  - Tema: success, warning, danger
 - [ ] Color theme support
   - [ ] Criar um gerenciador estilo o do Dan Abramov
 - [ ] Link

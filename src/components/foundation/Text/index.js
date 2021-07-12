@@ -18,7 +18,8 @@ export const variants = {
 export default function Text({
   as,
   variant,
-  bold,
+  fontBold,
+  fontMedium,
   capitalize,
   uppercase,
   className,
@@ -36,16 +37,32 @@ export default function Text({
           "text-4xl md:text-6xl font-extrabold",
         variant === variants["heading-1"] &&
           "text-4xl md:text-5xl font-extrabold",
-        variant === variants["heading-2"] && "text-2xl md:text-4xl font-bold",
-        variant === variants["heading-3"] && "text-xl md:text-2xl font-bold",
-        variant === variants["heading-4"] && "text-base md:text-xl font-bold",
-        variant === variants["heading-5"] && "text-sm md:text-base font-bold",
-        variant === variants["heading-6"] && "text-xs md:text-sm font-bold",
-        variant === variants["body-1"] && `text-lg ${bold && "font-semibold"}`,
+        variant === variants["heading-2"] &&
+          `text-2xl md:text-4xl ${fontBold ? "font-extrabold" : "font-bold"}`,
+        variant === variants["heading-3"] &&
+          `text-xl md:text-3xl ${fontBold ? "font-extrabold" : "font-bold"}`,
+        variant === variants["heading-4"] &&
+          `text-base md:text-xl ${fontBold ? "font-extrabold" : "font-bold"}`,
+        variant === variants["heading-5"] &&
+          `text-sm md:text-base ${fontBold ? "font-extrabold" : "font-bold"}`,
+        variant === variants["heading-6"] &&
+          `text-xs md:text-sm ${fontBold ? "font-extrabold" : "font-bold"}`,
+        variant === variants["body-1"] &&
+          `text-lg ${fontBold && "font-semibold"} ${
+            fontMedium && "font-medium"
+          }`,
         variant === variants["body-2"] &&
-          `text-base ${bold && "font-semibold"}`,
-        variant === variants["body-3"] && `text-sm ${bold && "font-semibold"}`,
-        variant === variants["body-4"] && `text-xs ${bold && "font-semibold"}`,
+          `text-base ${fontBold && "font-semibold"} ${
+            fontMedium && "font-medium"
+          }`,
+        variant === variants["body-3"] &&
+          `text-sm ${fontBold && "font-semibold"} ${
+            fontMedium && "font-medium"
+          }`,
+        variant === variants["body-4"] &&
+          `text-xs ${fontBold && "font-semibold"} ${
+            fontMedium && "font-medium"
+          }`,
         capitalize && "capitalize",
         uppercase && "uppercase",
         srOnly && "sr-only",
@@ -62,7 +79,8 @@ export default function Text({
 Text.defaultProps = {
   as: "span",
   srOnly: false,
-  bold: false,
+  fontBold: false,
+  fontMedium: false,
   variant: "body-2",
   capitalize: false,
   uppercase: false,
@@ -81,12 +99,14 @@ Text.propTypes = {
     "h5",
     "h6",
     "input",
+    "button",
   ]),
   variant: PropTypes.oneOf(Object.keys(variants)),
   /** Used for display a text only for screen readers, usually to describe better a section usually used in combination with 'aria-labelledby' */
   srOnly: PropTypes.bool,
   /** Some variations have bold by default, but another can have this visual enabled through this property */
-  bold: PropTypes.bool,
+  fontBold: PropTypes.bool,
+  fontMedium: PropTypes.bool,
   capitalize: PropTypes.bool,
   uppercase: PropTypes.bool,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
