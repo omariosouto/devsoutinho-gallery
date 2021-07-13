@@ -34,19 +34,29 @@ export default function Text({
       className={classNames(
         variant,
         variant === variants["display-1"] &&
-          "text-4xl md:text-6xl font-extrabold",
+          "text-4xl md:text-6xl font-extrabold tracking-tight",
         variant === variants["heading-1"] &&
-          "text-4xl md:text-5xl font-extrabold",
+          "text-4xl md:text-5xl font-extrabold tracking-tight",
         variant === variants["heading-2"] &&
-          `text-2xl md:text-4xl ${fontBold ? "font-extrabold" : "font-bold"}`,
+          `text-2xl md:text-4xl tracking-tight ${
+            fontBold ? "font-extrabold" : "font-bold"
+          }`,
         variant === variants["heading-3"] &&
-          `text-xl md:text-3xl ${fontBold ? "font-extrabold" : "font-bold"}`,
+          `text-xl md:text-3xl tracking-tight ${
+            fontBold ? "font-extrabold" : "font-bold"
+          }`,
         variant === variants["heading-4"] &&
-          `text-base md:text-xl ${fontBold ? "font-extrabold" : "font-bold"}`,
+          `text-base md:text-xl tracking-tight ${
+            fontBold ? "font-extrabold" : "font-bold"
+          }`,
         variant === variants["heading-5"] &&
-          `text-sm md:text-base ${fontBold ? "font-extrabold" : "font-bold"}`,
+          `text-sm md:text-base tracking-tight ${
+            fontBold ? "font-extrabold" : "font-bold"
+          }`,
         variant === variants["heading-6"] &&
-          `text-xs md:text-sm ${fontBold ? "font-extrabold" : "font-bold"}`,
+          `text-xs md:text-sm tracking-tight ${
+            fontBold ? "font-extrabold" : "font-bold"
+          }`,
         variant === variants["body-1"] &&
           `text-lg ${fontBold && "font-semibold"} ${
             fontMedium && "font-medium"

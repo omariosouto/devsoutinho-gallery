@@ -7,6 +7,7 @@ import {
   ViewBoardsIcon,
   ViewListIcon,
 } from "@heroicons/react/outline";
+
 import Text from "../../components/foundation/Text";
 import Button from "../../components/commons/Button";
 import Box from "../../components/foundation/layout/Box";
@@ -37,6 +38,7 @@ const features = [
       "Tincidunt sollicitudin interdum nunc sit risus at bibendum vitae. Urna, quam ut sit justo non, consectetur et varius.",
   },
 ];
+
 const checklist = [
   "Unlimited projects",
   "No per user fees",
@@ -83,7 +85,6 @@ export default function PricingSection() {
                         aria-hidden="true"
                       />
                     </Box>
-                    {/* TODO: Add the icon */}
                     <Box className="ml-16">
                       <Text
                         as="p"
@@ -109,56 +110,81 @@ export default function PricingSection() {
             </Box>
           </Box>
         </Box>
-        <div className="bg-skin-fill-highlight py-16 px-4 sm:py-24 sm:px-6 lg:bg-none lg:px-0 lg:pl-8 lg:flex lg:items-center lg:justify-end">
-          <div className="max-w-lg mx-auto w-full space-y-8 lg:mx-0">
-            <div>
-              <h2 className="sr-only">Price</h2>
-              <p className="relative grid grid-cols-2">
-                <span className="flex flex-col text-center">
-                  <span className="text-5xl font-extrabold text-skin-text-contrast-fill-highlight tracking-tight">
+        <Box className="bg-skin-fill-highlight py-16 px-4 sm:py-24 sm:px-6 lg:bg-none lg:px-0 lg:pl-8 lg:flex lg:items-center lg:justify-end">
+          <Box className="max-w-lg mx-auto w-full lg:mx-0">
+            <Box>
+              <Text srOnly>Price</Text>
+              <Box as="p" className="relative grid grid-cols-2">
+                <Box as="span" className="flex flex-col text-center">
+                  <Text
+                    as="span"
+                    variant="heading-1"
+                    className="text-skin-text-contrast-fill-highlight"
+                  >
                     $99
-                  </span>
-                  <span className="mt-2 text-base font-medium text-skin-text-fill-highlight-darker">
-                    Setup fee
-                  </span>
-                  <span className="sr-only">plus</span>
-                </span>
-                <span
-                  className="pointer-events-none absolute h-12 w-full flex items-center justify-center"
+                  </Text>
+                  <Box as="span" className="mt-2">
+                    <Text
+                      as="span"
+                      className="text-skin-text-fill-highlight-darker"
+                    >
+                      Setup fee
+                    </Text>
+                  </Box>
+                  <Text srOnly>plus</Text>
+                </Box>
+                <Box
+                  as="span"
+                  className="pointer-events-none absolute h-full w-full flex items-center justify-center"
                   aria-hidden="true"
                 >
+                  {/* TODO:Refactor icon */}
                   <PlusIcon
                     className="h-6 w-6 text-skin-text-fill-highlight-darker"
                     aria-hidden="true"
                   />
-                </span>
-                <span>
-                  <span className="flex flex-col text-center">
-                    <span className="text-5xl font-extrabold text-skin-text-contrast-fill-highlight tracking-tight">
+                </Box>
+                <Box as="span">
+                  <Box as="span" className="flex flex-col text-center">
+                    <Text
+                      as="span"
+                      variant="heading-1"
+                      className="text-skin-text-contrast-fill-highlight"
+                    >
                       $4
-                    </span>
-                    <span className="mt-2 text-base font-medium text-skin-text-fill-highlight-darker">
-                      Per month
-                    </span>
-                  </span>
-                </span>
-              </p>
-            </div>
-            <ul className="rounded overflow-hidden grid gap-px sm:grid-cols-2">
+                    </Text>
+                    <Box as="span" className="mt-2">
+                      <Text
+                        as="span"
+                        className="text-skin-text-fill-highlight-darker"
+                      >
+                        Per month
+                      </Text>
+                    </Box>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+            <Box
+              as="ul"
+              className="rounded overflow-hidden grid gap-px sm:grid-cols-2 my-8"
+            >
               {checklist.map((item) => (
-                <li
+                <Box
+                  as="li"
                   key={item}
-                  className="bg-skin-fill-highlight-dark py-4 px-4 flex items-center space-x-3 text-base text-skin-text-contrast-fill-highlight"
+                  className="bg-skin-fill-highlight-dark py-4 px-4 flex items-center space-x-3 text-skin-text-contrast-fill-highlight"
                 >
                   <CheckIcon
                     className="h-6 w-6 text-skin-text-fill-highlight-darker"
                     aria-hidden="true"
                   />
-                  <span>{item}</span>
-                </li>
+                  <Text>{item}</Text>
+                </Box>
               ))}
-            </ul>
-            <Box className="md:px-10">
+            </Box>
+            <Box className="mt-8 mb-4">
+              {/* TODO Fix semantics */}
               <Button
                 fullWidth
                 size="lg"
@@ -169,13 +195,13 @@ export default function PricingSection() {
                 Get started today
               </Button>
             </Box>
-            <Box className="md:px-10">
-              <Button fullWidth variant="tertiary" theme="default">
+            <Box>
+              <Button fullWidth size="lg" variant="primary" theme="light" ghost>
                 Try Workflow Lite for free
               </Button>
             </Box>
-          </div>
-        </div>
+          </Box>
+        </Box>
       </Box>
     </Box>
   );

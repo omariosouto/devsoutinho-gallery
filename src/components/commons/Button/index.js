@@ -43,12 +43,14 @@ function ButtonText({ className, href, size, ...props }) {
 }
 
 export const themes = {
-  default: "default",
   highlight: "highlight",
   accent: "accent",
   success: "success",
   error: "error",
   warning: "warning",
+  // TODO: Neutral reverse
+  dark: "dark",
+  light: "light",
 };
 
 export default function Button({
@@ -58,6 +60,7 @@ export default function Button({
   href,
   fullWidth,
   theme,
+  ghost,
   inverse,
   ...props
 }) {
@@ -66,26 +69,40 @@ export default function Button({
       href={href}
       className={classNames(
         "btn-base",
+        ghost && "btn-ghost",
         inverse && "btn-inverse",
+        variant !== variants.primary ? 'shadow-sm' :  'shadow-none',
         // ## Default Styles
         // -- Focus Ring
         "focus:outline-none focus:ring-2 focus:ring-offset-2",
         // -- Shape
-        "border border-transparent rounded shadow-sm",
+        `border border-transparent rounded`,
         "inline-flex flex-col  items-center",
         // ## Variant and Themes
-        `btn-${variants.primary}-${themes.default}`     === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
-        `btn-${variants.primary}-${themes.highlight}`   === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
-        `btn-${variants.primary}-${themes.accent}`      === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.primary}-${themes.highlight}`    === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.primary}-${themes.accent}`       === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.primary}-${themes.success}`      === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.primary}-${themes.error}`        === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.primary}-${themes.warning}`      === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.primary}-${themes.dark}`      === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.primary}-${themes.light}`      === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
 
-        `btn-${variants.secondary}-${themes.default}`   === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
-        `btn-${variants.secondary}-${themes.highlight}` === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
-        `btn-${variants.secondary}-${themes.accent}`    === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.secondary}-${themes.highlight}`  === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.secondary}-${themes.accent}`     === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.secondary}-${themes.success}`    === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.secondary}-${themes.error}`      === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.secondary}-${themes.warning}`    === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.secondary}-${themes.dark}`    === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.secondary}-${themes.light}`    === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
 
-        `btn-${variants.tertiary}-${themes.default}`    === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
-        `btn-${variants.tertiary}-${themes.highlight}`  === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
-        `btn-${variants.tertiary}-${themes.accent}`     === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
-        variants.tertiary === variant && 'shadow-none',
+        `btn-${variants.tertiary}-${themes.highlight}`   === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.tertiary}-${themes.accent}`      === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.tertiary}-${themes.success}`     === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.tertiary}-${themes.error}`       === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.tertiary}-${themes.warning}`     === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.tertiary}-${themes.dark}`     === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.tertiary}-${themes.light}`       === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+
         // ================================
         // ## Customizations
         // TODO: Fazer o full Width dentro de cada size, precisa ser diferente
@@ -108,7 +125,8 @@ Button.defaultProps = {
   size: sizes.md,
   variant: variants.primary,
   fullWidth: false,
-  theme: "default",
+  theme: "highlight",
+  ghost: false,
   inverse: false,
 };
 
@@ -116,5 +134,7 @@ Button.propTypes = {
   size: PropTypes.oneOf(Object.keys(sizes)),
   theme: PropTypes.oneOf(Object.keys(themes)),
   fullWidth: PropTypes.bool,
+  ghost: PropTypes.bool,
+  inverse: PropTypes.bool,
   variant: PropTypes.oneOf(Object.keys(variants)),
 };

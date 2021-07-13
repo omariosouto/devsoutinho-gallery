@@ -1,6 +1,10 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 const fontSize = require("./src/theme/fontSize.json");
-const brandTheme = require("./src/theme/colors/brandThemeNubank.json");
+// const brandTheme = require("./src/theme/colors/brandThemeBlueCyan.json");
+// const brandTheme = require("./src/theme/colors/brandThemeNubank.json");
+const brandTheme = require("./src/theme/colors/brandThemeDevSoutinho.json");
+
+const accentColors = require("./src/theme/colors/defaults/accentColors.json");
 
 module.exports = {
   mode: "jit",
@@ -43,6 +47,7 @@ module.exports = {
       },
       // ./Theming
       colors: {
+        ...accentColors,
         ...brandTheme,
       },
     },

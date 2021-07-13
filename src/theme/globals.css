@@ -12,6 +12,7 @@
   */
   :root {
     /* ## Background */
+    --color-base-fill: #FFFFFF;
     --color-fill: theme('colors.neutral.100');
     --color-fill-highlight: theme('colors.primary.500');
     --color-fill-highlight-dark: theme('colors.primary.600');
@@ -41,19 +42,20 @@
 }
 
 /* Button */
-.btn-base { color: var(--color-button-color); background: var(--color-button-background-color); }
-.btn-base:hover { color: var(--color-button-color-hover); background: var(--color-button-background-color-hover); }
-.btn-base:focus { color: var(--color-button-color-hover); background: var(--color-button-background-color-hover); }
+.btn-base { color: var(--color-button-color); background: var(--color-button-background-color); opacity: 1; transition: .3s opacity; }
+.btn-base:hover { /* color: var(--color-button-color-hover); background: var(--color-button-background-color-hover); */ opacity: .6; }
+.btn-base:focus { /* color: var(--color-button-color-hover); background: var(--color-button-background-color-hover); */ opacity: .6; }
 
-.btn-inverse { color: var(--color-button-background-color); background: var(--color-button-color); }
-.btn-inverse:hover { color: var(--color-button-background-color-hover); background: var(--color-button-color-hover); }
-.btn-inverse:focus { color: var(--color-button-background-color-hover); background: var(--color-button-color-hover); }
+.btn-ghost { color: var(--color-button-background-color); background: transparent; }
+.btn-ghost:hover { /* color: var(--color-button-background-color-hover); background: var(--color-button-color-hover); */ opacity: .6; }
+.btn-ghost:focus { /* color: var(--color-button-background-color-hover); background: var(--color-button-color-hover); */ opacity: .6; }
+
+.btn-inverse { color: var(--color-button-background-color); background-color: var(--color-button-color); }
+.btn-inverse:hover { /* color: var(--color-button-background-color-hover); background: var(--color-button-color-hover); */ opacity: .6; }
+.btn-inverse:focus { /* color: var(--color-button-background-color-hover); background: var(--color-button-color-hover); */ opacity: .6; }
+
 
 /* --- primary */
-.btn-primary-default {
-  --color-button-color: #FFFFFF; --color-button-background-color: theme('colors.neutral.600');
-  --color-button-color-hover: #FFFFFF; --color-button-background-color-hover: theme('colors.neutral.500');
-}
 .btn-primary-highlight {
   --color-button-color: #FFFFFF; --color-button-background-color: theme('colors.primary.600');
   --color-button-color-hover: #FFFFFF; --color-button-background-color-hover: theme('colors.primary.500');
@@ -62,32 +64,83 @@
   --color-button-color: #FFFFFF; --color-button-background-color: theme('colors.accent.600');
   --color-button-color-hover: #FFFFFF; --color-button-background-color-hover: theme('colors.accent.500');
 }
+.btn-primary-success {
+  --color-button-color: #FFFFFF; --color-button-background-color: theme('colors.success.600');
+  --color-button-color-hover: #FFFFFF; --color-button-background-color-hover: theme('colors.success.500');
+}
+.btn-primary-error {
+  --color-button-color: #FFFFFF; --color-button-background-color: theme('colors.error.600');
+  --color-button-color-hover: #FFFFFF; --color-button-background-color-hover: theme('colors.error.500');
+}
+.btn-primary-warning {
+  --color-button-color: #FFFFFF; --color-button-background-color: theme('colors.warning.600');
+  --color-button-color-hover: #FFFFFF; --color-button-background-color-hover: theme('colors.warning.500');
+}
+.btn-primary-dark {
+  --color-button-color: #FFFFFF; --color-button-background-color: theme('colors.neutral.900');
+  --color-button-color-hover: #FFFFFF; --color-button-background-color-hover: theme('colors.neutral.800');
+}
+.btn-primary-light {
+  --color-button-color: theme('colors.neutral.900'); --color-button-background-color: white;
+  --color-button-color-hover: theme('colors.neutral.900'); --color-button-background-color-hover: white;
+}
 
 /* --- secondary */
-.btn-secondary-default {
-  --color-button-color: #FFFFFF; --color-button-background-color: theme('colors.neutral.600');
-  --color-button-color-hover: #FFFFFF; --color-button-background-color-hover: theme('colors.neutral.500');
-}
 .btn-secondary-highlight {
-  --color-button-color: #FFFFFF; --color-button-background-color: theme('colors.primary.600');
-  --color-button-color-hover: #FFFFFF; --color-button-background-color-hover: theme('colors.primary.500');
+  --color-button-color: theme('colors.primary.900'); --color-button-background-color: theme('colors.primary.100');
+  --color-button-color-hover: theme('colors.primary.900'); --color-button-background-color-hover: theme('colors.primary.100');
 }
 .btn-secondary-accent {
-  --color-button-color: #FFFFFF; --color-button-background-color: theme('colors.accent.600');
-  --color-button-color-hover: #FFFFFF; --color-button-background-color-hover: theme('colors.accent.500');
+  --color-button-color: theme('colors.accent.900'); --color-button-background-color: theme('colors.accent.100');
+  --color-button-color-hover: theme('colors.accent.900'); --color-button-background-color-hover: theme('colors.accent.100');
+}
+.btn-secondary-success {
+  --color-button-color: theme('colors.success.900'); --color-button-background-color: theme('colors.success.100');
+  --color-button-color-hover: theme('colors.success.900'); --color-button-background-color-hover: theme('colors.success.100');
+}
+.btn-secondary-error {
+  --color-button-color: theme('colors.error.900'); --color-button-background-color: theme('colors.error.100');
+  --color-button-color-hover: theme('colors.error.900'); --color-button-background-color-hover: theme('colors.error.100');
+}
+.btn-secondary-warning {
+  --color-button-color: theme('colors.warning.900'); --color-button-background-color: theme('colors.warning.100');
+  --color-button-color-hover: theme('colors.warning.900'); --color-button-background-color-hover: theme('colors.warning.100');
+}
+.btn-secondary-dark {
+  --color-button-color: theme('colors.neutral.900'); --color-button-background-color: theme('colors.neutral.200');
+  --color-button-color-hover: theme('colors.neutral.900'); --color-button-background-color-hover: theme('colors.neutral.200');
+}
+.btn-secondary-light {
+  --color-button-color: white; --color-button-background-color: theme('colors.neutral.100');
+  --color-button-color-hover: white; --color-button-background-color-hover: theme('colors.neutral.100');
 }
 
 /* --- tertiary */
-.btn-tertiary-default {
-  --color-button-color: theme('colors.neutral.700'); --color-button-background-color: transparent;
-  --color-button-color-hover: theme('colors.neutral.800'); --color-button-background-color-hover: transparent;
-}
 .btn-tertiary-highlight {
-  --color-button-color: theme('colors.primary.700'); --color-button-background-color: transparent;
-  --color-button-color-hover: theme('colors.primary.800'); --color-button-background-color-hover: transparent;
+  --color-button-color: theme('colors.primary.700'); --color-button-background-color: var(--color-base-fill);
+  --color-button-color-hover: theme('colors.primary.800'); --color-button-background-color-hover: var(--color-base-fill);
 }
 .btn-tertiary-accent {
-  --color-button-color: theme('colors.accent.700'); --color-button-background-color: transparent;
-  --color-button-color-hover: theme('colors.accent.800'); --color-button-background-color-hover: transparent;
+  --color-button-color: theme('colors.accent.700'); --color-button-background-color: var(--color-base-fill);
+  --color-button-color-hover: theme('colors.accent.800'); --color-button-background-color-hover: var(--color-base-fill);
 }
-/* ============================================================================================ */
+.btn-tertiary-success {
+  --color-button-color: theme('colors.success.700'); --color-button-background-color: var(--color-base-fill);
+  --color-button-color-hover: theme('colors.success.800'); --color-button-background-color-hover: var(--color-base-fill);
+}
+.btn-tertiary-error {
+  --color-button-color: theme('colors.error.700'); --color-button-background-color: var(--color-base-fill);
+  --color-button-color-hover: theme('colors.error.800'); --color-button-background-color-hover: var(--color-base-fill);
+}
+.btn-tertiary-warning {
+  --color-button-color: theme('colors.warning.700'); --color-button-background-color: var(--color-base-fill);
+  --color-button-color-hover: theme('colors.warning.800'); --color-button-background-color-hover: var(--color-base-fill);
+}
+.btn-tertiary-dark {
+  --color-button-color: theme('colors.neutral.900'); --color-button-background-color: var(--color-base-fill);
+  --color-button-color-hover: theme('colors.neutral.800'); --color-button-background-color-hover: var(--color-base-fill);
+}
+.btn-tertiary-light {
+  --color-button-color: theme('colors.neutral.500'); --color-button-background-color: var(--color-base-fill);
+  --color-button-color-hover: theme('colors.neutral.500'); --color-button-background-color-hover: var(--color-base-fill);
+}
