@@ -159,7 +159,13 @@ export default function PricingSection() {
               ))}
             </ul>
             <Box className="md:px-10">
-              <Button fullWidth size="lg" variant="primary" theme="highlight">
+              <Button
+                fullWidth
+                size="lg"
+                variant="primary"
+                theme="highlight"
+                inverse
+              >
                 Get started today
               </Button>
             </Box>

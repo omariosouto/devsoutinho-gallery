@@ -1,6 +1,6 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 const fontSize = require("./src/theme/fontSize.json");
-const brandTheme = require("./src/theme/colors/brandTheme.json");
+const brandTheme = require("./src/theme/colors/brandThemeNubank.json");
 
 module.exports = {
   mode: "jit",
@@ -31,29 +31,6 @@ module.exports = {
           "text-fill-highlight-dark": "var(--color-text-fill-highlight-dark)",
           "text-fill-highlight-darker":
             "var(--color-text-fill-highlight-darker)",
-          // Button
-          ...["default", "highlight", "accent"].reduce((acc, item) => {
-            return {
-              ...acc,
-              [`text-button-primary-${item}`]: `var(--color-button-primary-${item}-color)`,
-              [`text-button-primary-${item}-hover`]: `var(--color-button-primary-${item}-color-hover)`,
-            };
-          }, {}),
-          ...["default", "highlight", "accent"].reduce((acc, item) => {
-            return {
-              ...acc,
-              [`text-button-secondary-${item}`]: `var(--color-button-secondary-${item}-color)`,
-              [`text-button-secondary-${item}-hover`]: `var(--color-button-secondary-${item}-color-hover)`,
-            };
-          }, {}),
-          ...["default", "highlight", "accent"].reduce((acc, item) => {
-            return {
-              ...acc,
-              [`text-button-tertiary-${item}`]: `var(--color-button-tertiary-${item}-color)`,
-              [`text-button-tertiary-${item}-hover`]: `var(--color-button-tertiary-${item}-color-hover)`,
-            };
-          }, {}),
-          // =========
         },
       },
       backgroundColor: {
@@ -62,40 +39,9 @@ module.exports = {
           "fill-highlight": "var(--color-fill-highlight)",
           "fill-highlight-dark": "var(--color-fill-highlight-dark)",
           "fill-highlight-darker": "var(--color-fill-highlight-darker)",
-          // Button
-          // Button
-          ...["default", "highlight", "accent"].reduce((acc, item) => {
-            return {
-              ...acc,
-              [`fill-button-primary-${item}`]: `var(--color-button-primary-${item}-background)`,
-              [`fill-button-primary-${item}-hover`]: `var(--color-button-primary-${item}-background-hover)`,
-            };
-          }, {}),
-          ...["default", "highlight", "accent"].reduce((acc, item) => {
-            return {
-              ...acc,
-              [`fill-button-secondary-${item}`]: `var(--color-button-secondary-${item}-background)`,
-              [`fill-button-secondary-${item}-hover`]: `var(--color-button-secondary-${item}-background-hover)`,
-            };
-          }, {}),
-          ...["default", "highlight", "accent"].reduce((acc, item) => {
-            return {
-              ...acc,
-              [`fill-button-tertiary-${item}`]: `var(--color-button-tertiary-${item}-background)`,
-              [`fill-button-tertiary-${item}-hover`]: `var(--color-button-tertiary-${item}-background-hover)`,
-            };
-          }, {}),
-          // =========
         },
       },
       // ./Theming
-
-      /* Base Colors: https://material-ui.com/customization/color/ */
-      /**
-       - 500: Good for backgrounds
-       - 900: Good for text
-       - 100: Good for tint the background of an element
-       */
       colors: {
         ...brandTheme,
       },

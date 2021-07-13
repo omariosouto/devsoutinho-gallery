@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import PropTypes from "prop-types";
 import { classNames } from "../../../infra/react/classNames";
 import Link from "../Link";
@@ -41,6 +42,15 @@ function ButtonText({ className, href, size, ...props }) {
   );
 }
 
+export const themes = {
+  default: "default",
+  highlight: "highlight",
+  accent: "accent",
+  success: "success",
+  error: "error",
+  warning: "warning",
+};
+
 export default function Button({
   children,
   variant,
@@ -48,79 +58,35 @@ export default function Button({
   href,
   fullWidth,
   theme,
+  inverse,
   ...props
 }) {
   return (
     <ButtonText
       href={href}
       className={classNames(
-        // Default Styles
+        "btn-base",
+        inverse && "btn-inverse",
+        // ## Default Styles
         // -- Focus Ring
         "focus:outline-none focus:ring-2 focus:ring-offset-2",
         // -- Shape
         "border border-transparent rounded shadow-sm",
         "inline-flex flex-col  items-center",
-        // Variants and Theme
-        variant === variants.primary &&
-          ((theme === "default" &&
-            `
-            text-skin-text-button-primary-default
-            hover:text-skin-text-button-primary-default-hover
-            bg-skin-fill-button-primary-default
-            hover:bg-skin-fill-button-primary-default-hover`) ||
-            (theme === "highlight" &&
-              `
-            text-skin-text-button-primary-highlight
-            hover:text-skin-text-button-primary-highlight-hover
-            bg-skin-fill-button-primary-highlight
-            hover:bg-skin-fill-button-primary-highlight-hover`) ||
-            (theme === "accent" &&
-              `
-            text-skin-text-button-primary-accent
-            hover:text-skin-text-button-primary-accent-hover
-            bg-skin-fill-button-primary-accent
-            hover:bg-skin-fill-button-primary-accent-hover`) ||
-            ""),
-        variant === variants.secondary &&
-          ((theme === "default" &&
-            `
-              text-skin-text-button-secondary-default
-              hover:text-skin-text-button-secondary-default-hover
-              bg-skin-fill-button-secondary-default
-              hover:bg-skin-fill-button-secondary-default-hover`) ||
-            (theme === "highlight" &&
-              `
-              text-skin-text-button-secondary-highlight
-              hover:text-skin-text-button-secondary-highlight-hover
-              bg-skin-fill-button-secondary-highlight
-              hover:bg-skin-fill-button-secondary-highlight-hover`) ||
-            (theme === "accent" &&
-              `
-              text-skin-text-button-secondary-accent
-              hover:text-skin-text-button-secondary-accent-hover
-              bg-skin-fill-button-secondary-accent
-              hover:bg-skin-fill-button-secondary-accent-hover`) ||
-            ""),
-        variant === variants.tertiary &&
-          ((theme === "default" &&
-            `   shadow-none
-                text-skin-text-button-tertiary-default
-                hover:text-skin-text-button-tertiary-default-hover
-                bg-skin-fill-button-tertiary-default
-                hover:bg-skin-fill-button-tertiary-default-hover`) ||
-            (theme === "highlight" &&
-              ` shadow-none
-                text-skin-text-button-tertiary-highlight
-                hover:text-skin-text-button-tertiary-highlight-hover
-                bg-skin-fill-button-tertiary-highlight
-                hover:bg-skin-fill-button-tertiary-highlight-hover`) ||
-            (theme === "accent" &&
-              ` shadow-none
-                text-skin-text-button-tertiary-accent
-                hover:text-skin-text-button-tertiary-accent-hover
-                bg-skin-fill-button-tertiary-accent
-                hover:bg-skin-fill-button-tertiary-accent-hover`) ||
-            ""),
+        // ## Variant and Themes
+        `btn-${variants.primary}-${themes.default}`     === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.primary}-${themes.highlight}`   === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.primary}-${themes.accent}`      === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+
+        `btn-${variants.secondary}-${themes.default}`   === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.secondary}-${themes.highlight}` === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.secondary}-${themes.accent}`    === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+
+        `btn-${variants.tertiary}-${themes.default}`    === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.tertiary}-${themes.highlight}`  === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        `btn-${variants.tertiary}-${themes.accent}`     === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
+        variants.tertiary === variant && 'shadow-none',
+        // ================================
         // ## Customizations
         // TODO: Fazer o full Width dentro de cada size, precisa ser diferente
         fullWidth && "w-full",
@@ -143,10 +109,12 @@ Button.defaultProps = {
   variant: variants.primary,
   fullWidth: false,
   theme: "default",
+  inverse: false,
 };
 
 Button.propTypes = {
   size: PropTypes.oneOf(Object.keys(sizes)),
+  theme: PropTypes.oneOf(Object.keys(themes)),
   fullWidth: PropTypes.bool,
   variant: PropTypes.oneOf(Object.keys(variants)),
 };

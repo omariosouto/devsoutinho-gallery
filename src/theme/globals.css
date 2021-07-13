@@ -25,7 +25,7 @@
     /*
     --color-text-light-fill-highlight
     */
-    --color-text-fill-highlight: var(--color-fill);
+    --color-text-fill-highlight: var(--color-fill-highlight);
     --color-text-medium: theme('colors.neutral.800');
     /*
     --color-text-medium-fill-highlight
@@ -37,59 +37,57 @@
     */
     --color-text-fill-highlight-darker: var(--color-fill-highlight-darker);
     /* ============= */
-
-    /* ## Button */
-    /* --primary.default */
-    --color-button-primary-default-color: #FFFFFF;
-    --color-button-primary-default-color-hover: #FFFFFF;
-    --color-button-primary-default-background: theme('colors.neutral.600');
-    --color-button-primary-default-background-hover: theme('colors.neutral.500');
-    /* --primary.highlight */
-    --color-button-primary-highlight-color: #FFFFFF;
-    --color-button-primary-highlight-color-hover: #FFFFFF;
-    --color-button-primary-highlight-background: theme('colors.primary.600');
-    --color-button-primary-highlight-background-hover: theme('colors.primary.500');
-    /* --primary.accent */
-    --color-button-primary-accent-color: #FFFFFF;
-    --color-button-primary-accent-color-hover: #FFFFFF;
-    --color-button-primary-accent-background: theme('colors.accent.600');
-    --color-button-primary-accent-background-hover: theme('colors.accent.500');
-
-    /* // variant === variants.secondary && */
-    /* "text-neutral-800 hover:bg-neutral-300 bg-neutral-200 focus:ring-neutral-500 " */
-    /* --secondary.default */
-    --color-button-secondary-default-color: theme('colors.neutral.800');
-    --color-button-secondary-default-color-hover: theme('colors.neutral.800');
-    --color-button-secondary-default-background: theme('colors.neutral.200');
-    --color-button-secondary-default-background-hover: theme('colors.neutral.300');
-    /* --secondary.highlight */
-    --color-button-secondary-highlight-color: theme('colors.primary.800');
-    --color-button-secondary-highlight-color-hover: theme('colors.primary.800');
-    --color-button-secondary-highlight-background: theme('colors.primary.200');
-    --color-button-secondary-highlight-background-hover: theme('colors.primary.300');
-    /* --secondary.accent */
-    --color-button-secondary-accent-color: theme('colors.accent.800');
-    --color-button-secondary-accent-color-hover: theme('colors.accent.800');
-    --color-button-secondary-accent-background: theme('colors.accent.200');
-    --color-button-secondary-accent-background-hover: theme('colors.accent.300');
-
-
-    /* // variant === variants.tertiary &&
-        //   "text-neutral-700 bg-transparent hover:text-neutral-800 focus:ring-neutral-500 border shadow-none", */
-    /* --tertiary.default */
-    --color-button-tertiary-default-color: theme('colors.neutral.700');
-    --color-button-tertiary-default-color-hover: theme('colors.neutral.800');
-    --color-button-tertiary-default-background: transparent;
-    --color-button-tertiary-default-background-hover: transparent;
-    /* --tertiary.highlight */
-    --color-button-tertiary-highlight-color: theme('colors.primary.700');
-    --color-button-tertiary-highlight-color-hover: theme('colors.primary.800');
-    --color-button-tertiary-highlight-background: transparent;
-    --color-button-tertiary-highlight-background-hover: transparent;
-    /* --tertiary.accent */
-    --color-button-tertiary-accent-color: theme('colors.accent.700');
-    --color-button-tertiary-accent-color-hover: theme('colors.accent.800');
-    --color-button-tertiary-accent-background: transparent;
-    --color-button-tertiary-accent-background-hover: transparent;
   }
 }
+
+/* Button */
+.btn-base { color: var(--color-button-color); background: var(--color-button-background-color); }
+.btn-base:hover { color: var(--color-button-color-hover); background: var(--color-button-background-color-hover); }
+.btn-base:focus { color: var(--color-button-color-hover); background: var(--color-button-background-color-hover); }
+
+.btn-inverse { color: var(--color-button-background-color); background: var(--color-button-color); }
+.btn-inverse:hover { color: var(--color-button-background-color-hover); background: var(--color-button-color-hover); }
+.btn-inverse:focus { color: var(--color-button-background-color-hover); background: var(--color-button-color-hover); }
+
+/* --- primary */
+.btn-primary-default {
+  --color-button-color: #FFFFFF; --color-button-background-color: theme('colors.neutral.600');
+  --color-button-color-hover: #FFFFFF; --color-button-background-color-hover: theme('colors.neutral.500');
+}
+.btn-primary-highlight {
+  --color-button-color: #FFFFFF; --color-button-background-color: theme('colors.primary.600');
+  --color-button-color-hover: #FFFFFF; --color-button-background-color-hover: theme('colors.primary.500');
+}
+.btn-primary-accent {
+  --color-button-color: #FFFFFF; --color-button-background-color: theme('colors.accent.600');
+  --color-button-color-hover: #FFFFFF; --color-button-background-color-hover: theme('colors.accent.500');
+}
+
+/* --- secondary */
+.btn-secondary-default {
+  --color-button-color: #FFFFFF; --color-button-background-color: theme('colors.neutral.600');
+  --color-button-color-hover: #FFFFFF; --color-button-background-color-hover: theme('colors.neutral.500');
+}
+.btn-secondary-highlight {
+  --color-button-color: #FFFFFF; --color-button-background-color: theme('colors.primary.600');
+  --color-button-color-hover: #FFFFFF; --color-button-background-color-hover: theme('colors.primary.500');
+}
+.btn-secondary-accent {
+  --color-button-color: #FFFFFF; --color-button-background-color: theme('colors.accent.600');
+  --color-button-color-hover: #FFFFFF; --color-button-background-color-hover: theme('colors.accent.500');
+}
+
+/* --- tertiary */
+.btn-tertiary-default {
+  --color-button-color: theme('colors.neutral.700'); --color-button-background-color: transparent;
+  --color-button-color-hover: theme('colors.neutral.800'); --color-button-background-color-hover: transparent;
+}
+.btn-tertiary-highlight {
+  --color-button-color: theme('colors.primary.700'); --color-button-background-color: transparent;
+  --color-button-color-hover: theme('colors.primary.800'); --color-button-background-color-hover: transparent;
+}
+.btn-tertiary-accent {
+  --color-button-color: theme('colors.accent.700'); --color-button-background-color: transparent;
+  --color-button-color-hover: theme('colors.accent.800'); --color-button-background-color-hover: transparent;
+}
+/* ============================================================================================ */
