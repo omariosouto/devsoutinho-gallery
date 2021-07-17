@@ -2,8 +2,8 @@ import HeroExample from "./HeroExample";
 
 import ProjectsGrid from "./patterns/ProjectsGrid";
 import Footer from "../../../../patterns/Footer";
-import { MainContainer } from "../../../../components/layout/Container";
-import Box from "../../../../components/layout/Box";
+import { MainContainer } from "../../../../components/foundation/layout/Container";
+import Box from "../../../../components/foundation/layout/Box";
 import Button from "../../../../components/commons/Button";
 
 export default function HomeScreen({ projects }) {
@@ -13,7 +13,7 @@ export default function HomeScreen({ projects }) {
         <ProjectsGrid projects={projects.slice(0, 4)} />
 
         <Box className="mt-5">
-          <Button href="/" variant="accent" size="xs">
+          <Button href="/" variant="primary" size="sm">
             Ver mais!
           </Button>
         </Box>

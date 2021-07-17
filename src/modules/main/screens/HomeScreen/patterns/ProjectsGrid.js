@@ -1,4 +1,4 @@
-import Icon from "../../../../../components/commons/Icon";
+import Icon from "../../../../../components/foundation/Icon";
 import { classNames } from "../../../../../infra/react/classNames";
 
 export default function ProjectsGrid({ projects }) {

@@ -77,7 +77,8 @@ export default function Button({
         "focus:outline-none focus:ring-2 focus:ring-offset-2",
         // -- Shape
         `border border-transparent rounded`,
-        "inline-flex flex-col  items-center",
+        href ? "inline-block" : "inline-flex",
+        "flex-col  items-center",
         // ## Variant and Themes
         `btn-${variants.primary}-${themes.highlight}`    === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
         `btn-${variants.primary}-${themes.accent}`       === `btn-${variant}-${theme}` ? `btn-${variant}-${theme}` : false,
