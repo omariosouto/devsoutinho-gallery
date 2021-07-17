@@ -35,7 +35,7 @@ function ButtonText({ className, href, size, ...props }) {
       as={TagBase}
       variant={mapTextVariantBySize[size]}
       href={href}
-      fontMedium
+      fontBold
       className={className}
       {...props}
     />

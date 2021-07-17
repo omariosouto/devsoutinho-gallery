@@ -26,14 +26,7 @@ const linkVariants = {
   ),
 };
 
-export default function Link({
-  href,
-  children,
-  hasIcon,
-  className,
-  variant,
-  ...props
-}) {
+export default function Link({ href, children, hasIcon, className, ...props }) {
   const isLinkInternal = href.includes("http") ? EXTERNAL_LINK : INTERNAL_LINK;
   const LinkComponent = linkVariants[isLinkInternal];
 
@@ -41,12 +34,7 @@ export default function Link({
     <LinkComponent
       href={href}
       hasIcon={hasIcon}
-      className={classNames(
-        // Variants
-        variant === "primary" && "text-primary-500 hover:text-primary-400",
-        variant === "accent" && "text-accent-500 hover:text-accent-400",
-        className
-      )}
+      className={classNames(className)}
       {...props}
     >
       {children}

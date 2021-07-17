@@ -1,12 +1,16 @@
-import Box from "../../components/layout/Box";
-import Link from "../../components/commons/Link";
-import Icon from "../../components/commons/Icon";
-import Text from "../../components/commons/Text";
 import { navigationLinks } from "./data";
+import Box from "../../components/foundation/layout/Box";
+import Icon from "../../components/foundation/Icon";
+import Text from "../../components/foundation/Text";
+import Link from "../../components/commons/Link";
 
 export default function Footer() {
   return (
-    <Box as="footer" className="bg-skin-fill" aria-labelledby="footer-heading">
+    <Box
+      as="footer"
+      className="bg-skin-fill-dark-stronger"
+      aria-labelledby="footer-heading"
+    >
       <Text id="footer-heading" as="h2" variant="heading-2" srOnly>
         Footer
       </Text>
@@ -17,7 +21,7 @@ export default function Footer() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-neutral-500 hover:text-neutral-400"
+                className="text-skin-fill-dark-color-contrast"
                 hasIcon={false}
               >
                 <Text variant="body-2" srOnly>
@@ -28,9 +32,17 @@ export default function Footer() {
             ))}
           </Box>
           <Box className="mt-8 md:mt-0 md:order-1">
-            <Text as="p" variant="body-2" className="text-skin-base">
+            <Text
+              as="p"
+              variant="body-2"
+              className="text-skin-fill-dark-color-contrast"
+            >
               &copy; 2020{" "}
-              <Link href="https://youtube.com/DevSoutinho" variant="primary">
+              <Link
+                className="text-skin-fill-dark-color-highlight"
+                href="https://youtube.com/DevSoutinho"
+                variant="primary"
+              >
                 DevSoutinho Tech
               </Link>
               . Todos os direitos reservados.

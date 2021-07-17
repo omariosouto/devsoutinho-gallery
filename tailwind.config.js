@@ -1,10 +1,19 @@
+/* eslint-disable prettier/prettier */
 const defaultTheme = require("tailwindcss/defaultTheme");
 const fontSize = require("./src/theme/fontSize.json");
 // const brandTheme = require("./src/theme/colors/brandThemeBlueCyan.json");
-// const brandTheme = require("./src/theme/colors/brandThemeNubank.json");
-const brandTheme = require("./src/theme/colors/brandThemeDevSoutinho.json");
+const brandTheme = require("./src/theme/colors/brandThemeNubank.json");
+// const brandTheme = require("./src/theme/colors/brandThemeDevSoutinho.json");
 
 const accentColors = require("./src/theme/colors/defaults/accentColors.json");
+
+const backgrounds = [
+  "color-fill-base",
+  "color-fill-dark",
+  "color-fill",
+  "color-fill-highlight",
+  "color-fill-accent",
+];
 
 module.exports = {
   mode: "jit",
@@ -25,24 +34,29 @@ module.exports = {
       // Theming
       textColor: {
         skin: {
-          "text-contrast-fill-highlight": "var(--text-contrast-fill-highlight)",
-          "text-contrast-fill": "var(--text-contrast-fill)",
-          "text-light": "var(--color-text-light)",
-          "text-medium": "var(--color-text-medium)",
-          "text-strong": "var(--color-text-strong)",
-          "text-fill": "var(--color-text-fill)",
-          "text-fill-highlight": "var(--color-text-fill-highlight)",
-          "text-fill-highlight-dark": "var(--color-text-fill-highlight-dark)",
-          "text-fill-highlight-darker":
-            "var(--color-text-fill-highlight-darker)",
+          ...backgrounds.reduce((acc, currentBackground) => {
+            return {
+              ...acc,
+              [`${currentBackground.replace('color-', '')}-color-contrast`]: `var(--${currentBackground}-color-contrast)`,
+              [`${currentBackground.replace('color-', '')}-color-contrast-strong`]: `var(--${currentBackground}-color-contrast-strong)`,
+              [`${currentBackground.replace('color-', '')}-color-contrast-light`]: `var(--${currentBackground}-color-contrast-light)`,
+              [`${currentBackground.replace('color-', '')}-color-highlight`]: `var(--${currentBackground}-color-highlight)`,
+              [`${currentBackground.replace('color-', '')}-color-highlight-strong`]: `var(--${currentBackground}-color-highlight-strong)`,
+              [`${currentBackground.replace('color-', '')}-color-highlight-light`]: `var(--${currentBackground}-color-highlight-light)`,
+            }
+          }, {}),
         },
       },
       backgroundColor: {
         skin: {
-          fill: "var(--color-fill)",
-          "fill-highlight": "var(--color-fill-highlight)",
-          "fill-highlight-dark": "var(--color-fill-highlight-dark)",
-          "fill-highlight-darker": "var(--color-fill-highlight-darker)",
+          ...backgrounds.reduce((acc, currentBackground) => {
+            return {
+              ...acc,
+              [currentBackground.replace('color-', '')]: `var(--${currentBackground})`,  
+              [`${currentBackground.replace('color-', '')}-strong`]: `var(--${currentBackground}-strong)`,  
+              [`${currentBackground.replace('color-', '')}-stronger`]: `var(--${currentBackground}-stronger)`,  
+            }
+          }, {}),
         },
       },
       // ./Theming

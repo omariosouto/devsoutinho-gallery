@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import PropTypes from "prop-types";
 import { classNames } from "../../../infra/react/classNames";
 
@@ -19,12 +20,12 @@ export default function Text({
   as,
   variant,
   fontBold,
-  fontMedium,
   capitalize,
   uppercase,
   className,
   style,
   children,
+  fontNormal,
   srOnly,
   ...props
 }) {
@@ -39,40 +40,41 @@ export default function Text({
           "text-4xl md:text-5xl font-extrabold tracking-tight",
         variant === variants["heading-2"] &&
           `text-2xl md:text-4xl tracking-tight ${
-            fontBold ? "font-extrabold" : "font-bold"
+            !fontNormal && fontBold ? "font-extrabold" : "font-bold"
           }`,
         variant === variants["heading-3"] &&
           `text-xl md:text-3xl tracking-tight ${
-            fontBold ? "font-extrabold" : "font-bold"
+            !fontNormal && fontBold ? "font-extrabold" : "font-bold"
           }`,
         variant === variants["heading-4"] &&
           `text-base md:text-xl tracking-tight ${
-            fontBold ? "font-extrabold" : "font-bold"
+            !fontNormal && fontBold ? "font-extrabold" : "font-bold"
           }`,
         variant === variants["heading-5"] &&
           `text-sm md:text-base tracking-tight ${
-            fontBold ? "font-extrabold" : "font-bold"
+            !fontNormal && fontBold ? "font-extrabold" : "font-bold"
           }`,
         variant === variants["heading-6"] &&
           `text-xs md:text-sm tracking-tight ${
-            fontBold ? "font-extrabold" : "font-bold"
+            !fontNormal && fontBold ? "font-extrabold" : "font-bold"
           }`,
         variant === variants["body-1"] &&
           `text-lg ${fontBold && "font-semibold"} ${
-            fontMedium && "font-medium"
+            fontBold && "font-medium"
           }`,
         variant === variants["body-2"] &&
           `text-base ${fontBold && "font-semibold"} ${
-            fontMedium && "font-medium"
+            fontBold && "font-medium"
           }`,
         variant === variants["body-3"] &&
           `text-sm ${fontBold && "font-semibold"} ${
-            fontMedium && "font-medium"
+            fontBold && "font-medium"
           }`,
         variant === variants["body-4"] &&
           `text-xs ${fontBold && "font-semibold"} ${
-            fontMedium && "font-medium"
+            fontBold && "font-medium"
           }`,
+        fontNormal && "font-normal",
         capitalize && "capitalize",
         uppercase && "uppercase",
         srOnly && "sr-only",
@@ -90,7 +92,7 @@ Text.defaultProps = {
   as: "span",
   srOnly: false,
   fontBold: false,
-  fontMedium: false,
+  fontNormal: false,
   variant: "body-2",
   capitalize: false,
   uppercase: false,
@@ -116,7 +118,7 @@ Text.propTypes = {
   srOnly: PropTypes.bool,
   /** Some variations have bold by default, but another can have this visual enabled through this property */
   fontBold: PropTypes.bool,
-  fontMedium: PropTypes.bool,
+  fontNormal: PropTypes.bool,
   capitalize: PropTypes.bool,
   uppercase: PropTypes.bool,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),

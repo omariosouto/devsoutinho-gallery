@@ -5,43 +5,115 @@
 
 
 @layer base {
-  /*
-  // 1 - O tema define o deck de cores
-  // 2 - A UI define a nomenclatura
-  // 3 - Um wrapper seta como que determinado pedaço da UI vai se comportar, podendo mergear temas
-  */
   :root {
-    /* ## Background */
-    --color-base-fill: #FFFFFF;
-    --color-fill: theme('colors.neutral.100');
-    --color-fill-highlight: theme('colors.primary.500');
-    --color-fill-highlight-dark: theme('colors.primary.600');
-    --color-fill-highlight-darker: theme('colors.primary.900');
-    /* ============= */
+    --default-color: theme('colors.neutral.900');
+    --default-bg: #FFFFFF;
+    --color-fill-base: var(--default-bg);
+      --color-fill-base-color-contrast: theme('colors.neutral.600');
+      --color-fill-base-color-contrast-strong: theme('colors.neutral.900');
+      --color-fill-base-color-contrast-light: theme('colors.neutral.700');
+      --color-fill-base-color-highlight: theme('colors.primary.700');
+      --color-fill-base-color-highlight-strong: theme('colors.primary.900');
+      --color-fill-base-color-highlight-light: theme('colors.primary.600');
     
-    /* ## Text */
-    --text-contrast-fill-highlight: #FFFFFF;
-    --text-contrast-fill: theme('colors.neutral.900');
-    --color-text-light: theme('colors.neutral.700');
-    /*
-    --color-text-light-fill-highlight
-    */
-    --color-text-fill-highlight: var(--color-fill-highlight);
-    --color-text-medium: theme('colors.neutral.800');
-    /*
-    --color-text-medium-fill-highlight
-    */
-    --color-text-fill-highlight-dark: var(--color-fill-highlight-dark);
-    --color-text-strong: theme('colors.neutral.900');
-    /*
-    --color-text-strong-fill-highlight
-    */
-    --color-text-fill-highlight-darker: var(--color-fill-highlight-darker);
-    /* ============= */
+    --color-fill: theme('colors.neutral.100');
+      --color-fill-color-contrast: theme('colors.neutral.600');
+      --color-fill-color-contrast-strong: theme('colors.neutral.900');
+      --color-fill-color-contrast-light: theme('colors.neutral.700');
+      --color-fill-color-highlight: theme('colors.primary.800');
+      --color-fill-color-highlight-strong: theme('colors.primary.900');
+      --color-fill-color-highlight-light: theme('colors.primary.700');
+
+    --color-fill: theme('colors.neutral.100');
+      --color-fill-color-contrast: theme('colors.neutral.600');
+      --color-fill-color-contrast-strong: theme('colors.neutral.900');
+      --color-fill-color-contrast-light: theme('colors.neutral.700');
+      --color-fill-color-highlight: theme('colors.primary.800');
+      --color-fill-color-highlight-strong: theme('colors.primary.900');
+      --color-fill-color-highlight-light: theme('colors.primary.700');
+    
+    --color-fill-dark: theme('colors.neutral.600');
+    --color-fill-dark-strong: theme('colors.neutral.700');
+    --color-fill-dark-stronger: theme('colors.neutral.900');
+      --color-fill-dark-color-contrast: #FFFFFF;
+      --color-fill-dark-color-contrast-strong: theme('colors.neutral.100');
+      --color-fill-dark-color-contrast-light: theme('colors.neutral.200');
+      --color-fill-dark-color-highlight: theme('colors.primary.400');
+      --color-fill-dark-color-highlight-strong: theme('colors.primary.500');
+      --color-fill-dark-color-highlight-light: theme('colors.primary.600');
+
+    --color-fill-highlight: theme('colors.primary.600');
+    --color-fill-highlight-strong: theme('colors.primary.700');
+    --color-fill-highlight-stronger: theme('colors.primary.900');
+      --color-fill-highlight-color-contrast: #FFFFFF;
+      --color-fill-highlight-color-contrast-strong: theme('colors.neutral.100');
+      --color-fill-highlight-color-contrast-light: theme('colors.neutral.200');
+      --color-fill-highlight-color-highlight: theme('colors.primary.100');
+      --color-fill-highlight-color-highlight-strong: theme('colors.primary.200');
+      --color-fill-highlight-color-highlight-light: theme('colors.primary.300');
+
+    --color-fill-accent: theme('colors.accent.500');
+      --color-fill-accent-color-contrast: theme('colors.neutral.600');
+      --color-fill-accent-color-contrast-strong: theme('colors.neutral.900');
+      --color-fill-accent-color-contrast-light: theme('colors.neutral.700');
+      --color-fill-accent-color-highlight: theme('colors.accent.800');
+      --color-fill-accent-color-highlight-strong: theme('colors.accent.900');
+      --color-fill-accent-color-highlight-light: theme('colors.accent.700');
+  }
+  .dark {
+    --default-color: theme('colors.neutral.100');
+    --default-bg: theme('colors.neutral.900');
+    --color-fill-base: theme('colors.neutral.900');
+      --color-fill-base-color-contrast: theme('colors.neutral.100');
+      --color-fill-base-color-contrast-strong: theme('colors.neutral.100');
+      --color-fill-base-color-contrast-light: theme('colors.neutral.100');
+      --color-fill-base-color-highlight: theme('colors.primary.400');
+      --color-fill-base-color-highlight-strong: theme('colors.primary.500');
+      --color-fill-base-color-highlight-light: theme('colors.primary.600');
+    
+    --color-fill: theme('colors.neutral.800');
+      --color-fill-color-contrast: theme('colors.neutral.100');
+      --color-fill-color-contrast-strong: theme('colors.neutral.100');
+      --color-fill-color-contrast-light: theme('colors.neutral.100');
+      --color-fill-color-highlight: theme('colors.primary.200');
+      --color-fill-color-highlight-strong: theme('colors.primary.300');
+      --color-fill-color-highlight-light: theme('colors.primary.400');
+
+    --color-fill-dark: theme('colors.neutral.600');
+    --color-fill-dark-strong: theme('colors.neutral.700');
+    --color-fill-dark-stronger: theme('colors.neutral.900');
+      --color-fill-dark-color-contrast: #FFFFFF;
+      --color-fill-dark-color-contrast-strong: theme('colors.neutral.100');
+      --color-fill-dark-color-contrast-light: theme('colors.neutral.200');
+      --color-fill-dark-color-dark: theme('colors.neutral.100');
+      --color-fill-dark-color-dark-strong: theme('colors.neutral.200');
+      --color-fill-dark-color-dark-light: theme('colors.neutral.300');
+    
+    --color-fill-highlight: theme('colors.primary.700');
+    --color-fill-highlight-strong: theme('colors.primary.800');
+    --color-fill-highlight-stronger: theme('colors.primary.900');
+      --color-fill-highlight-color-contrast: #FFFFFF;
+      --color-fill-highlight-color-contrast-strong: theme('colors.neutral.100');
+      --color-fill-highlight-color-contrast-light: theme('colors.neutral.200');
+      --color-fill-highlight-color-highlight: theme('colors.primary.100');
+      --color-fill-highlight-color-highlight-strong: theme('colors.primary.200');
+      --color-fill-highlight-color-highlight-light: theme('colors.primary.300');
+
+    --color-fill-accent: theme('colors.accent.500');
+      --color-fill-accent-color-contrast: theme('colors.neutral.600');
+      --color-fill-accent-color-contrast-strong: theme('colors.neutral.900');
+      --color-fill-accent-color-contrast-light: theme('colors.neutral.700');
+      --color-fill-accent-color-highlight: theme('colors.accent.400');
+      --color-fill-accent-color-highlight-strong: theme('colors.accent.500');
+      --color-fill-accent-color-highlight-light: theme('colors.accent.600');
   }
 }
 
-/* Button */
+/* ============================================================================================================ */
+
+/* 
+[Button]
+*/
 .btn-base { color: var(--color-button-color); background: var(--color-button-background-color); opacity: 1; transition: .3s opacity; }
 .btn-base:hover { /* color: var(--color-button-color-hover); background: var(--color-button-background-color-hover); */ opacity: .6; }
 .btn-base:focus { /* color: var(--color-button-color-hover); background: var(--color-button-background-color-hover); */ opacity: .6; }

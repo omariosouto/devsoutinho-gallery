@@ -1,3 +1,4 @@
+import { useDarkMode } from 'storybook-dark-mode';
 import "../src/theme/globals.css"
 
 export const parameters = {
@@ -15,3 +16,11 @@ export const parameters = {
     },
   },
 }
+
+export const decorators = [
+  (Story) => (
+    <div className={useDarkMode() ? 'dark' : ''}>
+      <Story />
+    </div>
+  ),
+];
