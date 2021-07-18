@@ -39,44 +39,49 @@ const checklist = [
   "14 days free",
 ];
 
-export default function PricingSection() {
+export function Sample() {
   return (
-    <>
-      <Box className="bg-skin-fill-base">
-        <Box className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-          <Box className="text-center">
+    <Box className="bg-skin-fill-base">
+      <Box className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+        <Box className="text-center">
+          <Text
+            as="h2"
+            variant="heading-5"
+            uppercase
+            className="text-skin-fill-base-color-highlight"
+          >
+            Pricing
+          </Text>
+          <Box className="mt-1">
             <Text
-              as="h2"
-              variant="heading-5"
-              uppercase
-              className="text-skin-fill-base-color-highlight"
+              as="p"
+              variant="heading-2"
+              fontBold
+              className="text-skin-fill-base-color-contrast-strong"
             >
-              Pricing
+              Take control of your team.
             </Text>
-            <Box className="mt-1">
-              <Text
-                as="p"
-                variant="heading-2"
-                fontBold
-                className="text-skin-fill-base-color-contrast-strong"
-              >
-                Take control of your team.
-              </Text>
-            </Box>
-            <Box className="max-w-xl mt-5 m-auto">
-              <Text
-                as="p"
-                variant="heading-4"
-                fontNormal={true}
-                className="text-skin-fill-base-color-contrast"
-              >
-                Start building for free, then add a site plan to go live.
-                Account plans unlock additional features.
-              </Text>
-            </Box>
+          </Box>
+          <Box className="max-w-xl mt-5 m-auto">
+            <Text
+              as="p"
+              variant="heading-4"
+              fontNormal={true}
+              className="text-skin-fill-base-color-contrast"
+            >
+              Start building for free, then add a site plan to go live. Account
+              plans unlock additional features.
+            </Text>
           </Box>
         </Box>
       </Box>
+    </Box>
+  );
+}
+
+export default function PricingSection() {
+  return (
+    <>
       <Box className="relative bg-skin-fill">
         <Box className="absolute inset-0" aria-hidden="true">
           <Box className="absolute inset-y-0 right-0 w-1/2 bg-skin-fill-highlight" />

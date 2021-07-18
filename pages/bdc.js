@@ -6,7 +6,9 @@ import { MainContainer } from "../src/components/foundation/layout/Container";
 export default function Bdc(props) {
   return (
     <MainContainer>
-      <BDCRenderer components={props.data.getLayout.components} />
+      {props.data?.getLayout?.components && (
+        <BDCRenderer components={props.data.getLayout.components} />
+      )}
     </MainContainer>
   );
 }

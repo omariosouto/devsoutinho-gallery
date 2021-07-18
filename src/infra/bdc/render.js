@@ -1,14 +1,17 @@
 /* eslint-disable react/jsx-key */
 import Footer from "../../patterns/Footer";
+import PricingSection, { Sample } from "../../patterns/PricingSection";
 
 const BDCComponentsMap = {
-  heading: (props) => <div>{JSON.stringify(props, null, 4)}</div>,
+  heading: (props) => <Sample {...props} />,
+  pricingSection: (props) => <PricingSection {...props} />,
   footer: (props) => <Footer {...props} />,
 };
 
 export default function BDCRenderer({ components }) {
-  return components.map(({ type, ...props }) => {
+  return components.map(({ type, ...props }, index) => {
     const BDCComponent = BDCComponentsMap[type];
-    return <BDCComponent {...props} />;
+    if (!BDCComponent) return null;
+    return <BDCComponent key={index + type} {...props} />;
   });
 }

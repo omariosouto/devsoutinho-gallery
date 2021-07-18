@@ -4,6 +4,7 @@ import { makeExecutableSchema } from "graphql-tools";
 
 const componentByComponentType = {
   heading: "Heading",
+  pricingSection: "PricingSection",
   footer: "Footer",
 };
 
@@ -14,6 +15,10 @@ const data = {
         {
           type: "heading",
           title: "Welcome to the BDC!",
+        },
+        {
+          type: "pricingSection",
+          title: "...",
         },
         {
           type: "footer",
@@ -27,6 +32,21 @@ const data = {
 // ==========================================
 // ==========================================
 const Components = {
+  PricingSection: {
+    name: "pricingSection",
+    Component: gql`
+      type PricingSection implements Component {
+        type: ComponentTypes!
+        title: String
+      }
+    `,
+    Fragment: gql`
+      fragment pricingSection on PricingSection {
+        type
+        title
+      }
+    `,
+  },
   Heading: {
     name: "heading",
     Component: gql`
@@ -61,21 +81,27 @@ const Components = {
 
 const BDCComponents = gql`
   enum ComponentTypes {
-    ${Components.Heading.name}
-    ${Components.Footer.name}
+    ${Object.keys(Components).reduce(
+      (acc, item) => acc + " " + Components[item].name,
+      ""
+    )}
   }
 
   ${Components.Heading.Component}
+  ${Components.PricingSection.Component}
   ${Components.Footer.Component}
 `;
 
 export const BDCFragments = gql`
   ${Components.Heading.Fragment}
+  ${Components.PricingSection.Fragment}
   ${Components.Footer.Fragment}
 
   fragment components on Component {
-    ...${Components.Heading.name}
-    ...${Components.Footer.name}
+    ${Object.keys(Components).reduce(
+      (acc, item) => acc + " ..." + Components[item].name,
+      ""
+    )}
   }
 `;
 // ==========================================
