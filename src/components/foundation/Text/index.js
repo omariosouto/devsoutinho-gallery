@@ -100,7 +100,7 @@ Text.defaultProps = {
 
 Text.propTypes = {
   /** Define which tag should be rendered based in this Text */
-  as: PropTypes.oneOf([
+  as: PropTypes.oneOfType(PropTypes.oneOf([
     "span",
     "li",
     "p",
@@ -111,8 +111,8 @@ Text.propTypes = {
     "h5",
     "h6",
     "input",
-    "button",
-  ]),
+    "button",    
+  ]), PropTypes.node),
   variant: PropTypes.oneOf(Object.keys(variants)),
   /** Used for display a text only for screen readers, usually to describe better a section usually used in combination with 'aria-labelledby' */
   srOnly: PropTypes.bool,
