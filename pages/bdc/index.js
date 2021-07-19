@@ -13,11 +13,12 @@ export default function Bdc(props) {
 }
 
 export async function getStaticProps() {
-  const { data } = await bdcService({ page: '/bdc' });
+  const { data } = await bdcService({ page: '/' });
 
   return {
     props: {
       data,
     },
+    revalidate: 1,
   };
 }

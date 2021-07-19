@@ -1,7 +1,7 @@
 import Footer from '../../../../patterns/Footer';
 import Container, {
   MainContainer,
-} from '../../../../components/layout/Container';
+} from '../../../../components/foundation/layout/Container';
 import Header from './patterns/Header';
 import ProductList from './patterns/ProductList';
 
