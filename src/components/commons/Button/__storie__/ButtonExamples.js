@@ -1,5 +1,5 @@
-import Button, { variants, sizes, themes } from "../index";
-import Text from "../../../../components/foundation/Text";
+import Button, { variants, sizes, themes } from '../index';
+import Text from '../../../../components/foundation/Text';
 
 export function ButtonSizes() {
   return (
@@ -27,12 +27,12 @@ export function ButtonVariants() {
                 <Button variant={variant} theme={theme}>
                   {`${variant} `}
                 </Button>
-                {variant.includes("primary") && (
+                {variant.includes('primary') && (
                   <Button variant={variant} theme={theme} ghost>
                     ghost
                   </Button>
                 )}
-                {variant.includes("primary") && (
+                {variant.includes('primary') && (
                   <Button variant={variant} theme={theme} inverse>
                     inverse
                   </Button>

@@ -1,5 +1,5 @@
-import { createContext, useContext } from "react";
-import { usePaymentStatus, paymentMethods } from "./usePaymentStatus";
+import { createContext, useContext } from 'react';
+import { usePaymentStatus, paymentMethods } from './usePaymentStatus';
 
 const StoreModuleContext = createContext({
   isPaymentEnabled: false,

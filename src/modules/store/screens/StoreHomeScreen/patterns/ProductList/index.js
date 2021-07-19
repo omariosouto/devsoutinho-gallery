@@ -1,4 +1,4 @@
-import { useStoreModuleContext } from "../../../../wrappers/StoreModuleProvider";
+import { useStoreModuleContext } from '../../../../wrappers/StoreModuleProvider';
 
 export default function ProductList({ products }) {
   const { isPaymentEnabled } = useStoreModuleContext();
@@ -21,11 +21,11 @@ export default function ProductList({ products }) {
                 <span
                   className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                     isPaymentEnabled
-                      ? "bg-purple-100 text-purple-800"
-                      : "bg-yellow-100 text-yellow-800"
+                      ? 'bg-purple-100 text-purple-800'
+                      : 'bg-yellow-100 text-yellow-800'
                   }`}
                 >
-                  {isPaymentEnabled ? "Stripe" : "Direct Link"}
+                  {isPaymentEnabled ? 'Stripe' : 'Direct Link'}
                 </span>
                 <h3>{product.title}</h3>
                 <p className="text-indigo-600">{product.role}</p>

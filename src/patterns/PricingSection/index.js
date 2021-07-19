@@ -1,42 +1,42 @@
-import Icon from "../../components/foundation/Icon";
-import Text from "../../components/foundation/Text";
-import Button from "../../components/commons/Button";
-import Box from "../../components/foundation/layout/Box";
+import Icon from '../../components/foundation/Icon';
+import Text from '../../components/foundation/Text';
+import Button from '../../components/commons/Button';
+import Box from '../../components/foundation/layout/Box';
 
 const features = [
   {
-    name: "List view",
-    icon: "viewList",
+    name: 'List view',
+    icon: 'viewList',
     description:
-      "Nunc a, lacinia sed risus neque, arcu, rhoncus. Id mauris justo facilisis aliquam platea vestibulum condimentum morbi.",
+      'Nunc a, lacinia sed risus neque, arcu, rhoncus. Id mauris justo facilisis aliquam platea vestibulum condimentum morbi.',
   },
   {
-    name: "Boards",
-    icon: "viewBoard",
+    name: 'Boards',
+    icon: 'viewBoard',
     description:
-      "Purus lobortis volutpat posuere id integer nunc tellus. Non mauris malesuada feugiat massa mi pellentesque cum est. Pharetra a varius urna rhoncus, tempor rutrum.",
+      'Purus lobortis volutpat posuere id integer nunc tellus. Non mauris malesuada feugiat massa mi pellentesque cum est. Pharetra a varius urna rhoncus, tempor rutrum.',
   },
   {
-    name: "Calendar",
-    icon: "calendar",
+    name: 'Calendar',
+    icon: 'calendar',
     description:
-      "Purus lobortis volutpat posuere id integer nunc tellus. Non mauris malesuada feugiat massa mi pellentesque cum est. Pharetra a varius urna rhoncus, tempor rutrum.",
+      'Purus lobortis volutpat posuere id integer nunc tellus. Non mauris malesuada feugiat massa mi pellentesque cum est. Pharetra a varius urna rhoncus, tempor rutrum.',
   },
   {
-    name: "Teams",
-    icon: "users",
+    name: 'Teams',
+    icon: 'users',
     description:
-      "Tincidunt sollicitudin interdum nunc sit risus at bibendum vitae. Urna, quam ut sit justo non, consectetur et varius.",
+      'Tincidunt sollicitudin interdum nunc sit risus at bibendum vitae. Urna, quam ut sit justo non, consectetur et varius.',
   },
 ];
 
 const checklist = [
-  "Unlimited projects",
-  "No per user fees",
-  "Unlimited storage",
-  "24/7 support",
-  "Cancel any time",
-  "14 days free",
+  'Unlimited projects',
+  'No per user fees',
+  'Unlimited storage',
+  '24/7 support',
+  'Cancel any time',
+  '14 days free',
 ];
 
 export function Sample() {

@@ -1,5 +1,5 @@
-import { HomeBackground } from "./patterns/HomeBackground";
-import { MainMenu } from "./patterns/MainMenu";
+import { HomeBackground } from './patterns/HomeBackground';
+import { MainMenu } from './patterns/MainMenu';
 
 export default function Example(props) {
   return (

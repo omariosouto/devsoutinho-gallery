@@ -1,25 +1,25 @@
-import { useEffect, useState } from "react";
-import themeFontSize from "../../../../theme/fontSize.json";
-import Text, { variants } from "../index";
+import { useEffect, useState } from 'react';
+import themeFontSize from '../../../../theme/fontSize.json';
+import Text, { variants } from '../index';
 
 function useThemeFontSize() {
   const [variantsInfo, setVariantsInfo] = useState([]);
   useEffect(() => {
     const allVariants = [
-      ...document.querySelector("#SizeExamples").querySelectorAll("p"),
+      ...document.querySelector('#SizeExamples').querySelectorAll('p'),
     ];
 
     const result = allVariants.map((el) => {
       const { xs, md } = el.classList.value
-        .split(" ")
+        .split(' ')
         .reduce((acc, currentItem) => {
-          if (currentItem.includes("text-")) {
+          if (currentItem.includes('text-')) {
             let xs = acc.xs;
             let md = acc.md;
-            if (currentItem.includes("md:")) {
-              md = currentItem.replace("text-", "").replace("md:", "");
+            if (currentItem.includes('md:')) {
+              md = currentItem.replace('text-', '').replace('md:', '');
             } else {
-              xs = currentItem.replace("text-", "");
+              xs = currentItem.replace('text-', '');
             }
 
             return {
@@ -32,8 +32,8 @@ function useThemeFontSize() {
         }, {});
 
       return {
-        xs: themeFontSize[xs].replace("rem", ""),
-        md: themeFontSize[md || xs].replace("rem", ""),
+        xs: themeFontSize[xs].replace('rem', ''),
+        md: themeFontSize[md || xs].replace('rem', ''),
       };
     });
     setVariantsInfo(result);
@@ -66,7 +66,7 @@ export function SizeExamples() {
           {variantsName.map((variantName, index) => (
             <tr
               key={variantName}
-              className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
+              className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}
             >
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                 <Text as="p" variant={variantName}>
@@ -74,11 +74,11 @@ export function SizeExamples() {
                 </Text>
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                Font-size: {variantsInfo[index]?.md * 16}px |{" "}
+                Font-size: {variantsInfo[index]?.md * 16}px |{' '}
                 {variantsInfo[index]?.md}rem
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                Font-size: {variantsInfo[index]?.xs * 16}px |{" "}
+                Font-size: {variantsInfo[index]?.xs * 16}px |{' '}
                 {variantsInfo[index]?.xs}rem
               </td>
             </tr>

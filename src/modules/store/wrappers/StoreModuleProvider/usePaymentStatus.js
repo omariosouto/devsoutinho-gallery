@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-const STRIPE = "stripe";
-const DIRECT_LINK = "directLink";
+const STRIPE = 'stripe';
+const DIRECT_LINK = 'directLink';
 
 export const paymentMethods = {
   STRIPE,

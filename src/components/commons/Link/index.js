@@ -1,9 +1,9 @@
-import NextLink from "next/link";
-import { classNames } from "../../../infra/react/classNames";
-import Icon from "../../foundation/Icon";
+import NextLink from 'next/link';
+import { classNames } from '../../../infra/react/classNames';
+import Icon from '../../foundation/Icon';
 
-const INTERNAL_LINK = "internalLink";
-const EXTERNAL_LINK = "externalLink";
+const INTERNAL_LINK = 'internalLink';
+const EXTERNAL_LINK = 'externalLink';
 
 const LinkIcon = ({ name }) => (
   <Icon name={name} className="ml-1 inline-block align-text-bottom" />
@@ -27,7 +27,7 @@ const linkVariants = {
 };
 
 export default function Link({ href, children, hasIcon, className, ...props }) {
-  const isLinkInternal = href.includes("http") ? EXTERNAL_LINK : INTERNAL_LINK;
+  const isLinkInternal = href.includes('http') ? EXTERNAL_LINK : INTERNAL_LINK;
   const LinkComponent = linkVariants[isLinkInternal];
 
   return (
@@ -44,6 +44,6 @@ export default function Link({ href, children, hasIcon, className, ...props }) {
 
 Link.defaultProps = {
   hasIcon: true,
-  variant: "",
-  href: "",
+  variant: '',
+  href: '',
 };

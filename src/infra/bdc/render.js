@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
-import Footer from "../../patterns/Footer";
-import PricingSection, { Sample } from "../../patterns/PricingSection";
+import Footer from '../../patterns/Footer';
+import PricingSection, { Sample } from '../../patterns/PricingSection';
 
 const BDCComponentsMap = {
   heading: (props) => <Sample {...props} />,

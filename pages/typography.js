@@ -1,4 +1,4 @@
-import Text from "../src/components/commons/Text";
+import Text from '../src/components/commons/Text';
 
 const sizes = [
   12, 14, 16, 18,

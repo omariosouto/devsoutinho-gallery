@@ -1,6 +1,6 @@
-import { Client } from "@notionhq/client";
+import { Client } from '@notionhq/client';
 // https://developers.notion.com/reference/get-database
-const ID_PRODUCTS_DB = "f3df02c151b04c038ae23da141501922";
+const ID_PRODUCTS_DB = 'f3df02c151b04c038ae23da141501922';
 
 const notion = new Client({
   auth: process.env.NOTION_TOKEN,

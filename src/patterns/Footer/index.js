@@ -1,8 +1,8 @@
-import { navigationLinks } from "./data";
-import Box from "../../components/foundation/layout/Box";
-import Icon from "../../components/foundation/Icon";
-import Text from "../../components/foundation/Text";
-import Link from "../../components/commons/Link";
+import { navigationLinks } from './data';
+import Box from '../../components/foundation/layout/Box';
+import Icon from '../../components/foundation/Icon';
+import Text from '../../components/foundation/Text';
+import Link from '../../components/commons/Link';
 
 export default function Footer() {
   return (
@@ -37,7 +37,7 @@ export default function Footer() {
               variant="body-2"
               className="text-skin-fill-dark-color-contrast"
             >
-              &copy; 2020{" "}
+              &copy; 2020{' '}
               <Link
                 className="text-skin-fill-dark-color-highlight"
                 href="https://youtube.com/DevSoutinho"

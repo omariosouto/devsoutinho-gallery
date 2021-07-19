@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
-import { classNames } from "../../../infra/react/classNames";
+import PropTypes from 'prop-types';
+import { classNames } from '../../../infra/react/classNames';
 
 export const iconMapByName = {
   default: () => (
@@ -164,20 +164,20 @@ export const iconMapByName = {
 };
 
 export const iconSizes = {
-  xs: "xs",
-  sm: "sm",
+  xs: 'xs',
+  sm: 'sm',
 };
 
 export default function Icon({ name, size, className, ...props }) {
-  const iconName = name || "default";
+  const iconName = name || 'default';
   const CurrentIcon = iconMapByName[iconName];
   const isIconXS = size === iconSizes.xs;
   const isIconSM = size === iconSizes.sm;
   return (
     <svg
       className={classNames(
-        isIconXS && "h-4 w-4",
-        isIconSM && "h-6 w-6",
+        isIconXS && 'h-4 w-4',
+        isIconSM && 'h-6 w-6',
         className
       )}
       {...props}
@@ -191,8 +191,8 @@ export default function Icon({ name, size, className, ...props }) {
 }
 
 Icon.defaultProps = {
-  size: "xs",
-  className: "",
+  size: 'xs',
+  className: '',
 };
 
 const propTypes = {

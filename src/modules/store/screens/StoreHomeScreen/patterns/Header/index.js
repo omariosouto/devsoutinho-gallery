@@ -1,4 +1,4 @@
-import PaymentToggle from "./components/PaymentToggle";
+import PaymentToggle from './components/PaymentToggle';
 
 export default function Header() {
   return (
