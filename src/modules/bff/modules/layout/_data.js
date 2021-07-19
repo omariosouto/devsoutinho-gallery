@@ -15,7 +15,7 @@ async function pageContentService(pagename) {
     body: JSON.stringify({
       query: /* GraphQL */ `
         query {
-          ${pagename}page {
+          ${pagename} {
             bdc {
               __typename
             }
@@ -25,12 +25,12 @@ async function pageContentService(pagename) {
     }),
   })
     .then((res) => res.json())
-    .then(({ data }) => data[`${pagename}page`].bdc)
+    .then(({ data }) => data[`${pagename}`].bdc)
     .then((arr) => arr.map(({ __typename }) => __typename));
 
   const query = /* GraphQL */ `
   query {
-    ${pagename}page {
+    ${pagename} {
       bdc {
         __typename
         ${bdcRecords.reduce((acc, ComponentBlockRecord) => {
@@ -62,7 +62,7 @@ async function pageContentService(pagename) {
   })
     .then((res) => res.json())
     .then((res) => {
-      return res.data[`${pagename}page`].bdc;
+      return res.data[pagename].bdc;
     })
     .then((components) =>
       components
@@ -80,13 +80,13 @@ async function pageContentService(pagename) {
 export const data = {
   web: {
     '/': async () => {
-      const components = await pageContentService('home');
+      const components = await pageContentService('homepage');
       return {
         components,
       };
     },
     '/bdc': async () => {
-      const components = await pageContentService('bdc');
+      const components = await pageContentService('bdcpage');
       return {
         components,
       };
