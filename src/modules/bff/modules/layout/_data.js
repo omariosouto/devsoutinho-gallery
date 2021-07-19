@@ -1,34 +1,63 @@
 /**
 1. everypage must have declared it's components to build the dynamic query that goes to the server
 */
+import { Components } from './components';
 
 async function pageContentService(pagename) {
-  return fetch('https://graphql.datocms.com/', {
+  const options = {
     method: 'POST',
     headers: {
       Authorization: '2f915d861583aa173ef8de6c2de77c',
     },
+  };
+  const bdcRecords = await fetch('https://graphql.datocms.com/', {
+    ...options,
     body: JSON.stringify({
       query: /* GraphQL */ `
         query {
           ${pagename}page {
             bdc {
-              ... on FooterV1Record {
-                title 
-                _modelApiKey
-              }
-              ... on HeadingV1Record {
-                title
-                _modelApiKey
-              }
-              ... on PricingsectionV1Record {
-                _modelApiKey
-                mainTitle
-              }
+              __typename
             }
           }
         }
       `,
+    }),
+  })
+    .then((res) => res.json())
+    .then(({ data }) => data[`${pagename}page`].bdc)
+    .then((arr) => arr.map(({ __typename }) => __typename));
+
+  const query = /* GraphQL */ `
+  query {
+    ${pagename}page {
+      bdc {
+        __typename
+        ${bdcRecords.reduce((acc, ComponentBlockRecord) => {
+          const ComponentName = ComponentBlockRecord.replace('Record', '');
+
+          const CurrentComponentName = Object.keys(Components).find(
+            (component) =>
+              ComponentName.toLowerCase() ===
+              component.toLowerCase().replace('_', '')
+          );
+
+          return `
+            ${acc}
+            ... on ${ComponentBlockRecord} {
+              _modelApiKey
+              ${Components[CurrentComponentName].fields.join('')}
+            }`;
+        }, '')}
+      }
+    }
+  }
+  `;
+
+  return fetch('https://graphql.datocms.com/', {
+    ...options,
+    body: JSON.stringify({
+      query,
     }),
   })
     .then((res) => res.json())

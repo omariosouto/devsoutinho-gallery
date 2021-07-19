@@ -3,21 +3,23 @@
 export const Components = {
   PricingSection_v1: {
     name: 'pricingsection_v1',
+    fields: ['mainTitle'],
     Component: /* GraphQL */ `
       type PricingSection_v1 implements Component {
         type: ComponentTypes!
-        title: String
+        mainTitle: String
       }
     `,
     Fragment: /* GraphQL */ `
       fragment pricingsection_v1 on PricingSection_v1 {
         type
-        title
+        mainTitle
       }
     `,
   },
   Heading_v1: {
     name: 'heading_v1',
+    fields: [],
     Component: /* GraphQL */ `
       type Heading_v1 implements Component {
         type: ComponentTypes!
@@ -33,6 +35,7 @@ export const Components = {
   },
   Footer_v1: {
     name: 'footer_v1',
+    fields: [],
     Component: /* GraphQL */ `
       type Footer_v1 implements Component {
         type: ComponentTypes!

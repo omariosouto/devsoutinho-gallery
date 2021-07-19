@@ -1,6 +1,6 @@
-import bdcService from '../src/infra/bdc/service';
-import BDCRenderer from '../src/infra/bdc/render';
-import { MainContainer } from '../src/components/foundation/layout/Container';
+import bdcService from '../../src/infra/bdc/service';
+import BDCRenderer from '../../src/infra/bdc/render';
+import { MainContainer } from '../../src/components/foundation/layout/Container';
 
 export default function Bdc(props) {
   return (
@@ -13,7 +13,7 @@ export default function Bdc(props) {
 }
 
 export async function getStaticProps() {
-  const { data } = await bdcService({ page: '/bdc' });
+  const { data } = await bdcService({ page: '/' });
 
   return {
     props: {

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Icon from '../../components/foundation/Icon';
 import Text from '../../components/foundation/Text';
 import Button from '../../components/commons/Button';
@@ -79,7 +80,7 @@ export function Sample() {
   );
 }
 
-export default function PricingSection() {
+export default function PricingSection({ mainTitle }) {
   return (
     <>
       <Box className="relative bg-skin-fill">
@@ -104,7 +105,7 @@ export default function PricingSection() {
                 fontBold
                 className="text-skin-fill-color-contrast-strong"
               >
-                Everything you need to talk with your customers
+                {mainTitle}
               </Text>
               <Box as="dl" className="mt-12 space-y-10">
                 {features.map((feature) => (
@@ -247,3 +248,7 @@ export default function PricingSection() {
     </>
   );
 }
+
+PricingSection.propTypes = {
+  mainTitle: PropTypes.string.isRequired,
+};

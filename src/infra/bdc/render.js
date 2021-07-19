@@ -2,11 +2,11 @@
 import Footer from '../../patterns/Footer';
 import PricingSection, { Sample } from '../../patterns/PricingSection';
 
+// TODO: Call all components of v1
 const BDCComponentsMap = {
-  heading_v1: (props) => <Sample {...props} />,
-  // TODO: Fix the component and call it v1 also
-  pricingsection_v1: (props) => <PricingSection {...props} />,
-  footer_v1: (props) => <Footer {...props} />,
+  heading_v1: Sample,
+  pricingsection_v1: PricingSection,
+  footer_v1: Footer,
 };
 
 export default function BDCRenderer({ components }) {
