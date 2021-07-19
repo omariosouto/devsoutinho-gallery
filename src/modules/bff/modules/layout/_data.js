@@ -1,6 +1,5 @@
 /**
 1. everypage must have declared it's components to build the dynamic query that goes to the server
-2. each Pattern dynamic, should have it's relative file on dato and a test "sachem" like to prevent it doesn't exist
 */
 
 async function pageContentService(pagename) {
@@ -10,7 +9,7 @@ async function pageContentService(pagename) {
       Authorization: '2f915d861583aa173ef8de6c2de77c',
     },
     body: JSON.stringify({
-      query: `
+      query: /* GraphQL */ `
         query {
           ${pagename}page {
             bdc {
@@ -34,18 +33,18 @@ async function pageContentService(pagename) {
   })
     .then((res) => res.json())
     .then((res) => {
-      if (res.errors) {
-        const error = new Error('pageContentService error');
-        error.errors = res.errors;
-        // throw error;
-      }
       return res.data[`${pagename}page`].bdc;
     })
     .then((components) =>
-      components.map(({ _modelApiKey, ...component }) => ({
-        ...component,
-        type: _modelApiKey.split('_')[0],
-      }))
+      components
+        .filter((component) => Object.keys(component).length)
+        .map((component) => {
+          return component;
+        })
+        .map(({ _modelApiKey, ...component }) => ({
+          ...component,
+          type: _modelApiKey,
+        }))
     );
 }
 

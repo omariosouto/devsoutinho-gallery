@@ -3,9 +3,10 @@ import Footer from '../../patterns/Footer';
 import PricingSection, { Sample } from '../../patterns/PricingSection';
 
 const BDCComponentsMap = {
-  heading: (props) => <Sample {...props} />,
-  pricingSection: (props) => <PricingSection {...props} />,
-  footer: (props) => <Footer {...props} />,
+  heading_v1: (props) => <Sample {...props} />,
+  // TODO: Fix the component and call it v1 also
+  pricingsection_v1: (props) => <PricingSection {...props} />,
+  footer_v1: (props) => <Footer {...props} />,
 };
 
 export default function BDCRenderer({ components }) {
